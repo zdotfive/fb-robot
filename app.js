@@ -551,18 +551,18 @@ function sendGenericMessage(recipientId) {
             {
               type: "web_url",
               url: "http://www.dynamic-memory.com",
-              title: "My Website"
+              title: "DMS Software website"
             }, 
             {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
-            },
+              type: "web_url",
+              url: "https://matthewericfisher.tumblr.com",
+              title: "My blog"
+            }, 
             {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
-            }
+              type: "web_url",
+              url: "https://www.linkedin.com/in/matthewericfisher
+              title: "Linked In profile"
+            } 
             ]
           }, {
             title: "Family",
@@ -573,24 +573,39 @@ function sendGenericMessage(recipientId) {
             {
               type: "web_url",
               url: "https://facebook.com/matthewericfisher/",
-              title: "See more pics"
+              title: "See our pics"
             }, 
             {
               type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
+              title: "Learn more",
+              payload: "Learn more",
+            },
+            {
+              type: "postback",
+              title: "Love it in Florida",
+              payload: "Love it in Florida",
             }
            ]
           }, {
             title: "Passions",
-            subtitle: "Chess,dogs,hiking",
+            subtitle: "Chess,dogs,music",
             item_url: "https://www.chess.com/members/view/matthewericfisher",
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/chess.png",
             buttons: [
             {
               type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
+              title: "Chess",
+              payload: "Chess",
+            },
+            {
+              type: "postback",
+              title: "Music",
+              payload: "Music",
+            },
+            {
+              type: "postback",
+              title: "Animals",
+              payload: "Animals",
             }]
           }]
         }
