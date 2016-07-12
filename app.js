@@ -535,15 +535,28 @@ function sendGenericMessage(recipientId) {
             subtitle: "Software Engineering is awesome",
             item_url: "http://www.dynamic-memory.com/",               
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/danger-man-at-work-hi.png",
-            buttons: [{
+            buttons: [
+            {
               type: "web_url",
               url: "http://www.dynamic-memory.com",
               title: "My Website"
-            }, {
+            }, 
+            {
               type: "postback",
               title: "Call Postback",
               payload: "Payload for first bubble",
-            }]
+            },
+            {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            },
+            {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }
+            ]
           }, {
             title: "Family",
             subtitle: "Love those girls!",
@@ -559,12 +572,7 @@ function sendGenericMessage(recipientId) {
               type: "postback",
               title: "Call Postback",
               payload: "Payload for second bubble",
-            },
-            {
-              type: "web_url",
-              url: "https://matthewericfisher.tumblr.com",
-              title: "Tumblr"
-            } 
+            }
            ]
           }, {
             title: "Passions",
