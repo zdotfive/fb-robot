@@ -281,6 +281,7 @@ function receivedMessage(event) {
          if (_.has(scriptRules, messageText)) {
              messageText = scriptRules[messageText];
          }
+         console.log("Send id" + sendID);
          sendTextMessage(senderID, messageText);
       //  sendGenericMessage(senderID);
     }
