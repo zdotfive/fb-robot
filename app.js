@@ -536,7 +536,7 @@ function sendGenericMessage(recipientId) {
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/danger-man-at-work-hi.png",
             buttons: [{
               type: "web_url",
-              url: "http://www.dyanic-memory.com",
+              url: "http://www.dynamic-memory.com",
               title: "My Website"
             }, {
               type: "postback",
@@ -560,7 +560,7 @@ function sendGenericMessage(recipientId) {
           }, {
             title: "Passions",
             subtitle: "Chess,dogs,hiking",
-            item_url: "https://www.chess.com/matthewericfisher/",               
+            item_url: "https://www.chess.com/members/view/matthewericfisher",
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/chess.png",
             buttons: [
             {
