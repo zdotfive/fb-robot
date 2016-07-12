@@ -280,7 +280,7 @@ function receivedMessage(event) {
       case 'json':
          if (_.has(scriptRules, messageText)) {
              messageText = scriptRules[messageText];
-             var json = new Buffer(messageText, 'base64').toString('ascii'))
+             var json = new Buffer(messageText, 'base64').toString('ascii'));
              console.log("Json " + json);
              callSendAPI(json);
          }
