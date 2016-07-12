@@ -18,6 +18,7 @@ const
   https = require('https'),  
   request = require('request');
 
+const _ = require('lodash');
 const   scriptRules = require('./script.json');
 
 
