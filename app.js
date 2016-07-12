@@ -557,6 +557,17 @@ function sendGenericMessage(recipientId) {
               title: "Call Postback",
               payload: "Payload for second bubble",
             }]
+          }, {
+            title: "Passions",
+            subtitle: "Chess,dogs,hiking",
+            item_url: "https://www.chess.com/matthewericfisher/",               
+            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/chess.png",
+            buttons: [
+            {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for second bubble",
+            }]
           }]
         }
       }
