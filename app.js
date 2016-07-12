@@ -274,8 +274,8 @@ function receivedMessage(event) {
         break        
 
       default:
-      //  sendTextMessage(senderID, messageText);
-        sendGenericMessage(senderID);
+        sendTextMessage(senderID, messageText);
+      //  sendGenericMessage(senderID);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -468,12 +468,12 @@ function sendFileMessage(recipientId) {
  */
 function sendTextMessage(recipientId, messageText) {
   var messageData = {
-    recipient: {
-      id: recipientId
+    "recipient": {
+      "id": recipientId
     },
-    message: {
-      text: messageText,
-      metadata: "DEVELOPER_DEFINED_METADATA"
+    "message": {
+      "text": messageText,
+      "metadata": "DEVELOPER_DEFINED_METADATA"
     }
   };
 
