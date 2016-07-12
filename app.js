@@ -17,6 +17,8 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
+  scriptRules = require('./script.json');
+
 
 var app = express();
 
@@ -274,7 +276,10 @@ function receivedMessage(event) {
         break        
 
       default:
-        sendTextMessage(senderID, messageText);
+         if (_.has(scriptRules, messageText) {
+             messageText = scriptRules[messageText];
+         }
+         sendTextMessage(senderID, messageText);
       //  sendGenericMessage(senderID);
     }
   } else if (messageAttachments) {
