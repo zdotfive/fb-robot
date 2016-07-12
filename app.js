@@ -532,26 +532,26 @@ function sendGenericMessage(recipientId) {
           elements: [{
             title: "Career",
             subtitle: "Software Engineering is awesome",
-            item_url: "https://www.dynamic-memory.com/",               
+            item_url: "http://www.dynamic-memory.com/",               
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/danger-man-at-work-hi.png",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "http://www.dyanic-memory.com",
+              title: "My Website"
             }, {
               type: "postback",
               title: "Call Postback",
               payload: "Payload for first bubble",
             }],
           }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            title: "Family",
+            subtitle: "Love those girls!",
+            item_url: "https://www.facebook.com/matthewericfisher/",               
+            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/family.png",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
+              url: "https://facebook.com/matthewericfisher/",
+              title: "See more pics"
             }, {
               type: "postback",
               title: "Call Postback",
