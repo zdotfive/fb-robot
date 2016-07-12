@@ -281,7 +281,6 @@ function receivedMessage(event) {
          if (_.has(scriptRules, messageText)) {
              messageText = scriptRules[messageText];
              var json = new Buffer(messageText, 'base64').toString('ascii'); 
-             console.log("Json " + json);
              callSendAPI(json);
          }
         break;
@@ -759,6 +758,7 @@ function sendTypingOff(recipientId) {
  *
  */
 function callSendAPI(messageData) {
+console.log("json sent " + messageData);
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
     qs: { access_token: PAGE_ACCESS_TOKEN },
