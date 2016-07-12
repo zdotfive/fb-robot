@@ -550,11 +550,6 @@ function sendGenericMessage(recipientId) {
               type: "postback",
               title: "Call Postback",
               payload: "Payload for first bubble",
-            },
-            {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
             }
             ]
           }, {
