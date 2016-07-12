@@ -533,7 +533,7 @@ function sendGenericMessage(recipientId) {
             title: "Career",
             subtitle: "Software Engineering is awesome",
             item_url: "https://www.dynamic-memory.com/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/logo.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/rift/",
