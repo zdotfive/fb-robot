@@ -569,7 +569,7 @@ function sendGenericMessage(recipientId) {
               type: "web_url",
               url: "https://matthewericfisher.tumblr.com",
               title: "Tumblr"
-            }, 
+            } 
            ]
           }, {
             title: "Passions",
