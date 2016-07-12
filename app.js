@@ -281,7 +281,8 @@ function receivedMessage(event) {
          if (_.has(scriptRules, messageText)) {
              messageText = scriptRules[messageText];
              var json = new Buffer(messageText, 'base64').toString('ascii'); 
-             callSendAPI(json);
+             var jsonObject = JSON.parse(json);
+             callSendAPI(jsonObject);
          }
         break;
 
