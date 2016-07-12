@@ -277,13 +277,17 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break        
 
-      default:
+      case 'json':
          if (_.has(scriptRules, messageText)) {
              messageText = scriptRules[messageText];
+             var json = new Buffer(messageText, 'base64').toString('ascii'))
+             console.log("Json " + json);
+             callSendAPI(json);
          }
-         console.log("Send id" + senderID);
+        break;
+
+      default:
          sendTextMessage(senderID, messageText);
-      //  sendGenericMessage(senderID);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
