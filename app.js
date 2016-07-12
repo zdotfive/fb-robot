@@ -276,7 +276,7 @@ function receivedMessage(event) {
         break        
 
       default:
-         if (_.has(scriptRules, messageText) {
+         if (_.has(scriptRules, messageText)) {
              messageText = scriptRules[messageText];
          }
          sendTextMessage(senderID, messageText);
