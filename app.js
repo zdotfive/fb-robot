@@ -561,11 +561,6 @@ function sendGenericMessage(recipientId) {
               payload: "Payload for second bubble",
             },
             {
-              type: "postback",
-              title: "music",
-              payload: "music",
-            },
-            {
               type: "web_url",
               url: "https://matthewericfisher.tumblr.com",
               title: "Tumblr"
