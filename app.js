@@ -549,7 +549,8 @@ function sendGenericMessage(recipientId) {
             subtitle: "Love those girls!",
             item_url: "https://www.facebook.com/matthewericfisher/",               
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/family.png",
-            buttons: [{
+            buttons: [
+            {
               type: "web_url",
               url: "https://facebook.com/matthewericfisher/",
               title: "See more pics"
@@ -563,7 +564,12 @@ function sendGenericMessage(recipientId) {
               type: "postback",
               title: "music",
               payload: "music",
-            }
+            },
+            {
+              type: "web_url",
+              url: "https://matthewericfisher.tumblr.com",
+              title: "Tumblr"
+            }, 
            ]
           }, {
             title: "Passions",
