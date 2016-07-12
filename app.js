@@ -17,7 +17,8 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
-  scriptRules = require('./script.json');
+
+const   scriptRules = require('./script.json');
 
 
 var app = express();
