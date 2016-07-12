@@ -553,11 +553,23 @@ function sendGenericMessage(recipientId) {
               type: "web_url",
               url: "https://facebook.com/matthewericfisher/",
               title: "See more pics"
-            }, {
+            }, 
+            {
               type: "postback",
               title: "Call Postback",
               payload: "Payload for second bubble",
-            }]
+            },
+            {
+              type: "postback",
+              title: "music",
+              payload: "music",
+            },
+            {
+              type: "web_url",
+              url: "https://matthewericfisher.tumblr.com",
+              title: "Tumblr"
+            }
+           ]
           }, {
             title: "Passions",
             subtitle: "Chess,dogs,hiking",
