@@ -287,19 +287,8 @@ function receivedMessage(event) {
         break;
 
       default:
-         if (_.has(scriptRules, messageText)) {
-             messageText = scriptRules[messageText];
-             var json = new Buffer(messageText, 'base64').toString('ascii'); 
-             var jsonObject = JSON.parse(json);
-             callSendAPI(jsonObject);
-         }
-         else  {
-             messageText = scriptRules["home"];
-             var json = new Buffer(messageText, 'base64').toString('ascii'); 
-             var jsonObject = JSON.parse(json);
-             callSendAPI(jsonObject);
-             sendTextMessage(senderID, messageText);
-         }
+         sendJsonMesasge(messageText);
+
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -354,7 +343,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  sendJsonMessage(payload);
 }
 
 /*
@@ -484,6 +473,21 @@ function sendFileMessage(recipientId) {
   };
 
   callSendAPI(messageData);
+}
+
+function sendJsonMessage(keyword) {
+  if (_.has(scriptRules, keyword)) {
+      messageText = scriptRules[messageText];
+      var json = new Buffer(messageText, 'base64').toString('ascii'); 
+      var jsonObject = JSON.parse(json);
+      callSendAPI(jsonObject);
+  }
+  else  {
+      messageText = scriptRules["home"];
+      var json = new Buffer(messageText, 'base64').toString('ascii'); 
+      var jsonObject = JSON.parse(json);
+      callSendAPI(jsonObject);
+  }
 }
 
 /*
