@@ -542,7 +542,31 @@ function sendGenericMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "generic",
-          elements: [{
+          elements: [
+          {
+            title: "Robots",
+            subtitle: "The rise of the ChatBot!"
+            item_url: "http://www.dynamic-memory.com/",               
+            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/robot.png",
+            buttons: [
+            {
+              type: "postback",
+              title: "What is this Robot?",
+              payload: "What is this Robot?",
+            },
+            {
+              type: "postback",
+              title: "I want one",
+              payload: "I want one",
+            },
+            {
+              type: "postback",
+              title: "How does it work?",
+              payload: "How does it work?",
+            }
+            ]
+          }, 
+            {
             title: "Career",
             subtitle: "Software Engineering is awesome",
             item_url: "http://www.dynamic-memory.com/",               
@@ -554,15 +578,15 @@ function sendGenericMessage(recipientId) {
               title: "DMS Software website"
             }, 
             {
-              type: "web_url",
-              url: "https://matthewericfisher.tumblr.com",
-              title: "My blog"
-            }, 
+              type: "postback",
+              title: "Social media",
+              payload: "Social media",
+            },
             {
-              type: "web_url",
-              url: "https://www.linkedin.com/in/matthewericfisher",
-              title: "Linked In profile"
-            } 
+              type: "postback",
+              title: "Recruiters click here",
+              payload: "Recruiters click here",
+            }
             ]
           }, {
             title: "Family",
@@ -604,8 +628,8 @@ function sendGenericMessage(recipientId) {
             },
             {
               type: "postback",
-              title: "Animals",
-              payload: "Animals",
+              title: "Pets",
+              payload: "Pets",
             }]
           }]
         }
