@@ -287,7 +287,7 @@ function receivedMessage(event) {
         break;
 
       default:
-         sendJsonMessage(messageText);
+         sendJsonMessage(senderID, messageText);
 
     }
   } else if (messageAttachments) {
@@ -343,7 +343,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendJsonMessage(payload);
+  sendJsonMessage(senderID, payload);
 }
 
 /*
@@ -475,14 +475,14 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendJsonMessage(keyword) {
+function sendJsonMessage(recipentId,keyword) {
   if (_.has(scriptRules, keyword)) {
       var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
       var fullMessage = "{ \"recipient\": { \"id\": recipientId }," + json + "}";
 console.log(fullMessage);
-      var jsonObject = JSON.parse(json);
-      callSendAPI(jsonObject);
+      //var jsonObject = JSON.parse(json);
+      callSendAPI(fullMessage);
   }
   else  {
       var messageText = scriptRules["home"];
