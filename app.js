@@ -287,7 +287,7 @@ function receivedMessage(event) {
         break;
 
       default:
-         sendJsonMesasge(messageText);
+         sendJsonMessage(messageText);
 
     }
   } else if (messageAttachments) {
