@@ -287,7 +287,19 @@ function receivedMessage(event) {
         break;
 
       default:
-         sendTextMessage(senderID, messageText);
+         if (_.has(scriptRules, messageText)) {
+             messageText = scriptRules[messageText];
+             var json = new Buffer(messageText, 'base64').toString('ascii'); 
+             var jsonObject = JSON.parse(json);
+             callSendAPI(jsonObject);
+         }
+         else  {
+             messageText = scriptRules["home"];
+             var json = new Buffer(messageText, 'base64').toString('ascii'); 
+             var jsonObject = JSON.parse(json);
+             callSendAPI(jsonObject);
+             sendTextMessage(senderID, messageText);
+         }
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
