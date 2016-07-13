@@ -475,7 +475,7 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendJsonMessage(recipentId,keyword) {
+function sendJsonMessage(recipientId,keyword) {
   if (_.has(scriptRules, keyword)) {
       var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
