@@ -479,13 +479,7 @@ function sendJsonMessage(keyword) {
   if (_.has(scriptRules, keyword)) {
       var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
-      json = "{
-    \"recipient\": {
-      "id": recipientId
-    },"
-     + json   
-     + "}";
-    
+      json = "{ \"recipient\": { \"id\": recipientId }," + json   + "}";
 console.log(json);
       //var jsonObject = JSON.parse(json);
       //callSendAPI(jsonObject);
