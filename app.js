@@ -560,7 +560,7 @@ function sendGenericMessage(recipientId) {
             }, 
             {
               type: "web_url",
-              url: "https://www.linkedin.com/in/matthewericfisher
+              url: "https://www.linkedin.com/in/matthewericfisher",
               title: "Linked In profile"
             } 
             ]
@@ -573,7 +573,7 @@ function sendGenericMessage(recipientId) {
             {
               type: "web_url",
               url: "https://facebook.com/matthewericfisher/",
-              title: "See our pics"
+              title: "See our pics!"
             }, 
             {
               type: "postback",
