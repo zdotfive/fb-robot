@@ -477,13 +477,13 @@ function sendFileMessage(recipientId) {
 
 function sendJsonMessage(keyword) {
   if (_.has(scriptRules, keyword)) {
-      messageText = scriptRules[messageText];
+      var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
       var jsonObject = JSON.parse(json);
       callSendAPI(jsonObject);
   }
   else  {
-      messageText = scriptRules["home"];
+      var messageText = scriptRules["home"];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
       var jsonObject = JSON.parse(json);
       callSendAPI(jsonObject);
