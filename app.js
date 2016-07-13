@@ -545,7 +545,7 @@ function sendGenericMessage(recipientId) {
           elements: [
           {
             title: "Robots",
-            subtitle: "The rise of the ChatBot!"
+            subtitle: "The rise of the ChatBot!",
             item_url: "http://www.dynamic-memory.com/",               
             image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/robot.png",
             buttons: [
@@ -566,7 +566,7 @@ function sendGenericMessage(recipientId) {
             }
             ]
           }, 
-            {
+          {
             title: "Career",
             subtitle: "Software Engineering is awesome",
             item_url: "http://www.dynamic-memory.com/",               
