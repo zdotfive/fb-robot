@@ -482,7 +482,7 @@ function sendJsonMessage(recipientId,keyword) {
 console.log(json);
       var fullMessage = "{ \"recipient\": { \"id\": 1123020134434856 }," + json + "}";
 console.log(fullMessage);
-      //var jsonObject = JSON.parse(json);
+      var jsonObject = JSON.parse(fullMessage);
       callSendAPI(fullMessage);
   }
   else  {
