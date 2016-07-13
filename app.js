@@ -584,8 +584,8 @@ function sendGenericMessage(recipientId) {
             },
             {
               type: "postback",
-              title: "Recruiters click here",
-              payload: "Recruiters click here",
+              title: "Recruiters",
+              payload: "Recruiters",
             }
             ]
           }, {
