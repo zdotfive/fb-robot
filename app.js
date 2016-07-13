@@ -479,6 +479,7 @@ function sendJsonMessage(recipentId,keyword) {
   if (_.has(scriptRules, keyword)) {
       var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
+console.log(json);
       var fullMessage = "{ \"recipient\": { \"id\": recipientId }," + json + "}";
 console.log(fullMessage);
       //var jsonObject = JSON.parse(json);
