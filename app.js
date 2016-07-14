@@ -476,12 +476,20 @@ function sendFileMessage(recipientId) {
 }
 
 function sendSingleJsonMessage(recipientId,keyword) {
-      var messageText = scriptRules[keyword.toUpperCase()];
+   try {
+      var filename = scriptRules[keyword.toUpperCase()];
+      filename = "./script/" + filename;
+      var messageText  = require(filename);
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
       var jsonObject = JSON.parse(json);
       var fullMessage = { recipient: { id: recipientId  }};
       fullMessage.message = jsonObject;
       callSendAPI(fullMessage);
+   }
+   catch (e)
+   {
+      console.log("error in sendSingleJsonMessage");
+   }
 }
 
 function sendJsonMessage(recipientId,keyword) {
