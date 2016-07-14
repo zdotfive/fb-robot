@@ -490,11 +490,11 @@ function sendCustomMessage(recipientId,messageText) {
     switch (messageText.toLowerCase()) {
 
       case 'joke':
-        sendJoke(senderID);
+        sendJoke(recipientId);
         break        
 
       default:
-         sendJsonMessage(senderID, messageText);
+         sendJsonMessage(recipientId,messageText);
 
     }
 }
