@@ -479,8 +479,10 @@ function sendSingleJsonMessage(recipientId,keyword) {
    try {
       var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
+console.log(filename);
       var messageText  = require(filename);
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
+console.log(json);
       var jsonObject = JSON.parse(json);
       var fullMessage = { recipient: { id: recipientId  }};
       fullMessage.message = jsonObject;
