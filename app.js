@@ -487,7 +487,7 @@ console.log(fullMessage);
    }
    catch (e)
    {
-      console.log("error in sendSingleJsonMessage");
+      console.log("error in sendSingleJsonMessage " + e.message);
    }
 }
 
