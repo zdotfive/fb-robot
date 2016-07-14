@@ -483,7 +483,7 @@ function sendJsonMessage(recipientId,keyword) {
       var jsonObject = JSON.parse(json);
       var fullMessage = { recipient: { id: recipientId  }};
       fullMessage.message = jsonObject;
-console.log(fullMessage);
+console.log(json);
       callSendAPI(fullMessage);
   }
   else  {
