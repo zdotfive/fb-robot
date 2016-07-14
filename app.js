@@ -20,7 +20,7 @@ const
 
 const _ = require('lodash');
 const   scriptRules = require('./script.json');
-const   jokes = require('./JOKES.json');
+const   jokes = require('./script/JOKES.json');
 
 
 var app = express();
