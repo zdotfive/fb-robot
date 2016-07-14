@@ -223,6 +223,7 @@ function receivedMessage(event) {
     //sendTextMessage(senderID, "Quick reply tapped");
     //return;
     messageText = quickReplyPayload;
+    sendCustomMessage(senderID,messageText);
   }
 
   if (messageText) {
@@ -279,12 +280,8 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break        
 
-      case 'joke':
-        sendJoke(senderID);
-        break        
-
       default:
-         sendJsonMessage(senderID, messageText);
+         sendCustomMessage(senderID, messageText);
 
     }
   } else if (messageAttachments) {
@@ -340,7 +337,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendJsonMessage(senderID, payload);
+  sendCustomMessage(senderID,payload);
 }
 
 /*
@@ -486,6 +483,20 @@ console.log(fullMessage);
    {
       console.log("error in sendSingleJsonMessage " + e.message);
    }
+}
+
+function sendCustomMessage(recipientId,messageText) {
+
+    switch (messageText.toLowerCase()) {
+
+      case 'joke':
+        sendJoke(senderID);
+        break        
+
+      default:
+         sendJsonMessage(senderID, messageText);
+
+    }
 }
 
 function sendJsonMessage(recipientId,keyword) {
