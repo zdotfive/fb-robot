@@ -485,7 +485,7 @@ function sendSingleJsonMessage(recipientId,keyword) {
 }
 
 function sendJsonMessage(recipientId,keyword) {
-  if (_.has(scriptRules, keyword)) {
+  if (_.has(scriptRules, keyword.toUperCase())) {
       sendSingleJsonMessage(recipientId,keyword);
   }
   else  {
