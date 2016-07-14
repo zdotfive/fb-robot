@@ -475,22 +475,21 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-
-function sendJsonMessage(recipientId,keyword) {
-  if (_.has(scriptRules, keyword)) {
+function sendSingleJsonMessage(recipientId,keyword) {
       var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
       var jsonObject = JSON.parse(json);
       var fullMessage = { recipient: { id: recipientId  }};
       fullMessage.message = jsonObject;
-console.log(json);
       callSendAPI(fullMessage);
+}
+
+function sendJsonMessage(recipientId,keyword) {
+  if (_.has(scriptRules, keyword)) {
+      sendSingleJsonMessage(recipientId,keyword);
   }
   else  {
-      var messageText = scriptRules["home"];
-      var json = new Buffer(messageText, 'base64').toString('ascii'); 
-      var jsonObject = JSON.parse(json);
-      callSendAPI(jsonObject);
+      sendSingleJsonMessage(recipientId,"home");
   }
 }
 
@@ -818,7 +817,6 @@ function sendTypingOff(recipientId) {
  *
  */
 function callSendAPI(messageData) {
-console.log("json sent " + messageData);
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
     qs: { access_token: PAGE_ACCESS_TOKEN },
