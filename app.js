@@ -224,6 +224,7 @@ function receivedMessage(event) {
     //return;
     messageText = quickReplyPayload;
     sendCustomMessage(senderID,messageText);
+    return;
   }
 
   if (messageText) {
