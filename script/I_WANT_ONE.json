@@ -7,12 +7,12 @@
           "buttons":[
           {
             "type": "web_url",
-            "url": "https://www.chatfuel.com",
+            "url": "http://www.chatfuel.com",
             "title": "Chat Fuel"
           },
           {
             "type": "web_url",
-            "url": "https://www.dynamic-memory.com",
+            "url": "http://www.dynamic-memory.com",
             "title": "DMS Software"
           },
           {
