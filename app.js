@@ -521,7 +521,7 @@ function sendTextMessage(recipientId, messageText) {
 function sendJoke(recipientId) {
 
   var random = Math.floor(Math.random() * jokes.length);
-  var jokeString = joke[random].joke;
+  var jokeString = jokes[random].joke;
 
   var messageData = {
     recipient: {
