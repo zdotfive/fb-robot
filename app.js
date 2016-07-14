@@ -533,9 +533,15 @@ function sendTextMessage(recipientId, messageText) {
  */
 function sendJoke(recipientId) {
 
-  var random = Math.floor(Math.random() * jokes.length);
-  var jokeString = jokes[random].joke;
-console.log(random + " " + jokeString);
+  var jokeString = "";
+
+  while( jokeString ===  "")
+  {
+      var random = Math.floor(Math.random() * jokes.length);
+      if(jokes[random].joke.length < 320)   // better be a least one good joke :) 
+          jokeString = jokes[random].joke;
+  }
+      
 
   var messageData = {
     recipient: {
