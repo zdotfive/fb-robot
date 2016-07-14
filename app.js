@@ -20,6 +20,7 @@ const
 
 const _ = require('lodash');
 const   scriptRules = require('./script.json');
+const   jokes = require('./JOKES.json');
 
 
 var app = express();
@@ -228,7 +229,7 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
-    switch (messageText) {
+    switch (messageText.toLowerCase()) {
       case 'image':
         sendImageMessage(senderID);
         break;
@@ -277,14 +278,9 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break        
 
-      case 'json':
-         if (_.has(scriptRules, messageText)) {
-             messageText = scriptRules[messageText];
-             var json = new Buffer(messageText, 'base64').toString('ascii'); 
-             var jsonObject = JSON.parse(json);
-             callSendAPI(jsonObject);
-         }
-        break;
+      case 'joke':
+        sendJoke(senderID);
+        break        
 
       default:
          sendJsonMessage(senderID, messageText);
@@ -512,6 +508,39 @@ function sendTextMessage(recipientId, messageText) {
     "message": {
       "text": messageText,
       "metadata": "DEVELOPER_DEFINED_METADATA"
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send a Joke with Quick Reply buttons.
+ *
+ */
+function sendJoke(recipientId) {
+
+  var random = Math.floor(Math.random() * jokes.length);
+  var jokeString = joke[random].joke;
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: jokeString,
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Another 😂",
+          "payload":"joke"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"home"
+        }
+      ]
     }
   };
 
