@@ -475,17 +475,6 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-      var filename = scriptRules[keyword.toUpperCase()];
-      filename = "../fb-robot/script/" + filename;
-console.log(filename);
-      var json  = require(filename);
-console.log(json);
-//      var jsonObject = JSON.parse(json);
-      var fullMessage = { recipient: { id: recipientId  }};
-      fullMessage.message = json;
-
-
-
 function sendSingleJsonMessage(recipientId,keyword) {
    try {
       var filename = scriptRules[keyword.toUpperCase()];
