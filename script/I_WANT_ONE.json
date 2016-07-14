@@ -1,26 +1,4 @@
 {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "button",
-          "text": "Matthew wrote this robot himself for fun and profit. Simple personal robots are available free from ChatFuel.com.  If you would like helping setting up a ChatFull robot or a Custom robot, please conact DMS Software."},
-          "buttons":[
-          {
-            "type": "web_url",
-            "url": "https://www.chatfuel.com",
-            "title": "Chat Fuel"
-          },   
-          {
-            "type": "web_url",
-            "url": "https://www.dynamic-memory.com",
-            "title": "DMS Software"
-          },   
-          {
-            "type": "postback",
-            "title": "Home",
-            "payload": "home"
-          }
-          ]
-        }
+   "text": "I want one too!"
 }
 
