@@ -475,17 +475,25 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+      var filename = scriptRules[keyword.toUpperCase()];
+      filename = "../fb-robot/script/" + filename;
+console.log(filename);
+      var json  = require(filename);
+console.log(json);
+//      var jsonObject = JSON.parse(json);
+      var fullMessage = { recipient: { id: recipientId  }};
+      fullMessage.message = json;
+
+
+
 function sendSingleJsonMessage(recipientId,keyword) {
    try {
       var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
-console.log(filename);
-      var messageText  = require(filename);
-      var json = new Buffer(messageText, 'base64').toString('ascii'); 
-console.log(json);
-      var jsonObject = JSON.parse(json);
+      var json  = require(filename);
       var fullMessage = { recipient: { id: recipientId  }};
-      fullMessage.message = jsonObject;
+      fullMessage.message = json;
+console.log(fullMessage);
       callSendAPI(fullMessage);
    }
    catch (e)
