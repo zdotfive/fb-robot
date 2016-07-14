@@ -475,14 +475,15 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+
 function sendJsonMessage(recipientId,keyword) {
   if (_.has(scriptRules, keyword)) {
       var messageText = scriptRules[keyword];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
-console.log(json);
-      var fullMessage = "{ \"recipient\": { \"id\": 1123020134434856 }," + json + "}";
+      var jsonObject = JSON.parse(json);
+      var fullMessage = { recipient: { id: recipientId  }};
+      fullMessage.message = jsonObject;
 console.log(fullMessage);
-      var jsonObject = JSON.parse(fullMessage);
       callSendAPI(fullMessage);
   }
   else  {
