@@ -17,13 +17,13 @@
             },
             {
               "type": "postback",
-              "title": "I want one",
+              "title": "I want one!",
               "payload": "I want one"
             },
             {
               "type": "postback",
-              "title": "How does it work?",
-              "payload": "How does it work?"
+              "title": "Tell me a Joke 😂",
+              "payload": "joke"
             }
             ]
           }, 
