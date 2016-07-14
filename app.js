@@ -476,7 +476,7 @@ function sendFileMessage(recipientId) {
 }
 
 function sendSingleJsonMessage(recipientId,keyword) {
-      var messageText = scriptRules[keyword];
+      var messageText = scriptRules[keyword.toUpperCase()];
       var json = new Buffer(messageText, 'base64').toString('ascii'); 
       var jsonObject = JSON.parse(json);
       var fullMessage = { recipient: { id: recipientId  }};
