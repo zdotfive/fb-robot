@@ -535,6 +535,7 @@ function sendJoke(recipientId) {
 
   var random = Math.floor(Math.random() * jokes.length);
   var jokeString = jokes[random].joke;
+console.log(random + " " + jokeString);
 
   var messageData = {
     recipient: {
