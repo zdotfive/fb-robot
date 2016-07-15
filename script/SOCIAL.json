@@ -14,6 +14,11 @@
             "item_url": "https://matthewericfisher.tumblr.com",
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/tumblr.png"
           } 
+          {
+            "title": "YouTube",
+            "item_url": "https://www.youtube.com/user/MemoryLeakDMS",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/youtube.png"
+          } 
           ]
         }
       }
