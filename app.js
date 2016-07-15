@@ -495,7 +495,7 @@ console.log(fullMessage);
 
 function sendEnteredMessage(recipientId,messageText) {
 
-    if( previousMessageHash.senderID === 'send a message to matthew') {
+    if( previousMessageHash.senderID === 'send me a message') {
          sendTextMessage(1123020134434856,messageText); // send a message to Matthew directly
     }
     else { 
