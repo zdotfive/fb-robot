@@ -515,7 +515,7 @@ function sendCustomMessage(recipientId,messageText) {
          sendJsonMessage(recipientId,messageText);
 
     }
-    previousMessageHash.senderID = messageText;
+    previousMessageHash.senderID = messageText.toLowerCase();
 }
 
 function sendJsonMessage(recipientId,keyword) {
