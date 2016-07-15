@@ -22,6 +22,8 @@ const _ = require('lodash');
 const   scriptRules = require('./script.json');
 const   jokes = require('./script/JOKES.json');
 
+var previousMessageHash = {};
+
 
 var app = express();
 
@@ -281,12 +283,9 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break        
 
-      case 'matthew':
-        sendTextMessage(1123020134434856,"message to matt");
-        break        
 
       default:
-         sendCustomMessage(senderID, messageText);
+         sendEnteredMessage(senderID, messageText);
 
     }
   } else if (messageAttachments) {
@@ -490,6 +489,20 @@ console.log(fullMessage);
    }
 }
 
+/* 
+   Special handling for message that the sender typed in 
+*/
+
+function sendEnteredMessage(recipientId,messageText) {
+
+    if( previousMessageHash.senderID === 'send a message to matthew') {
+         sendTextMessage(1123020134434856,messageText); // send a message to Matthew directly
+    }
+    else { 
+         sendCustomMessage(recipientId,messageText);
+   }
+}
+
 function sendCustomMessage(recipientId,messageText) {
 
     switch (messageText.toLowerCase()) {
@@ -502,6 +515,7 @@ function sendCustomMessage(recipientId,messageText) {
          sendJsonMessage(recipientId,messageText);
 
     }
+    previousMessageHash.senderID = messageText;
 }
 
 function sendJsonMessage(recipientId,keyword) {
