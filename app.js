@@ -281,6 +281,10 @@ function receivedMessage(event) {
         sendTypingOff(senderID);
         break        
 
+      case 'matthew':
+        sendTextMessage(1123020134434856,"message to matt");
+        break        
+
       default:
          sendCustomMessage(senderID, messageText);
 
@@ -866,6 +870,7 @@ function sendTypingOff(recipientId) {
 
   callSendAPI(messageData);
 }
+
 
 /*
  * Call the Send API. The message data goes in the body. If successful, we'll 
