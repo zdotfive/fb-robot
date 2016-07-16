@@ -288,6 +288,7 @@ function receivedMessage(event) {
         break        
 
       case 'user info':
+        if(firstName)
         sendTextMessage(firstName);
         break        
 
