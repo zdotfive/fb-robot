@@ -177,6 +177,7 @@ function receivedAuthentication(event) {
   sendTextMessage(senderID, "Authentication successful");
 }
 
+var firstName; 
 
 /*
  * Message Event
@@ -193,6 +194,8 @@ function receivedAuthentication(event) {
  * 
  */
 function receivedMessage(event) {
+  var userInfo = callGetLocaleAPI(senderID);
+  firstName = userInfo.first_name;
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
@@ -284,7 +287,7 @@ function receivedMessage(event) {
         break        
 
       case 'user info':
-        callGetLocaleAPI(senderID);
+        sendText(firstName);
         break        
 
 
@@ -563,7 +566,6 @@ function sendJoke(recipientId) {
       if(jokes[random].joke.length < 320)   // better be a least one good joke :) 
           jokeString = jokes[random].joke;
   }
-      
 
   var messageData = {
     recipient: {
@@ -948,7 +950,7 @@ function callGetLocaleAPI(userID) {
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
         console.log('BODY: ' + body);
-        // ...and/or process the entire body here.
+        return body;
       })
     });
     req.on('error', function(e) {
