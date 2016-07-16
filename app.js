@@ -490,7 +490,6 @@ function sendFileMessage(recipientId) {
 
 function sendSingleJsonMessage(recipientId,keyword) {
    try {
-      sendTextMessage(recipientId,firstName);
       var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
       var json  = require(filename);
