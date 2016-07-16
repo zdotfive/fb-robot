@@ -929,7 +929,7 @@ function callSendAPI(messageData) {
  *
  */
 function callGetLocaleAPI(userID) {
-    var http = require('http');
+    var http = require('https');
     var path = '/v2.6/' + userID +'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + PAGE_ACCESS_TOKEN;
     var options = {
       host: 'graph.facebook.com',
