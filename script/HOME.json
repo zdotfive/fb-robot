@@ -52,7 +52,7 @@
           }, 
           { 
             "title": "Robot Examples",
-            "subtitle": "What can the robots do?
+            "subtitle": "Some great robots",
             "buttons": [
             {
               "type": "web_url",
@@ -67,7 +67,7 @@
             {
               "type": "web_url",
               "url": "https://www.messenger.com/t/hiponcho",
-              "title": "FB Poncho"
+              "title": "Facebook Poncho"
             }
             ]
           }]
