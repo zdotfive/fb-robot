@@ -952,7 +952,7 @@ function callGetLocaleAPI(userID) {
         var body = Buffer.concat(bodyChunks);
         var bodyObject = JSON.parse(body);
         console.log('BODY: ' + bodyObject.first_name);
-        return body;
+        return bodyObject;
       })
     });
     req.on('error', function(e) {
