@@ -288,8 +288,9 @@ function handleReceivedMessage(event) {
         break        
 
       case 'user info':
+      console.log('second: ' + firstName);
         if(firstName)
-        sendTextMessage(firstName);
+        sendTextMessage(senderID,firstName);
         break        
 
 
