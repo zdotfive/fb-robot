@@ -200,10 +200,10 @@ function receivedMessage(event) {
   var message = event.message;
   var userInfo = callGetLocaleAPI(senderID);
 
-  console.log("Received message for user %d and page %d at %d with message:", 
-    senderID, recipientID, timeOfMessage);
-  console.log(JSON.stringify(message));
-  console.log(userInfo);
+  //console.log("Received message for user %d and page %d at %d with message:", 
+  //  senderID, recipientID, timeOfMessage);
+  //console.log(JSON.stringify(message));
+  //console.log(userInfo);
   firstName = userInfo.first_name;
 
   var isEcho = message.is_echo;
@@ -940,8 +940,8 @@ function callGetLocaleAPI(userID) {
     };
 
     var req = http.get(options, function(res) {
-      console.log('STATUS: ' + res.statusCode);
-      console.log('HEADERS: ' + JSON.stringify(res.headers));
+      //console.log('STATUS: ' + res.statusCode);
+      //console.log('HEADERS: ' + JSON.stringify(res.headers));
 
       // Buffer the body entirely for processing as a whole.
       var bodyChunks = [];
