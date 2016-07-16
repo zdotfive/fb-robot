@@ -53,6 +53,7 @@
           { 
             "title": "Robot Examples",
             "subtitle": "Some great robots",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
             "buttons": [
             {
               "type": "web_url",
