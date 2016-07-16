@@ -954,6 +954,7 @@ function callGetLocaleAPI(userID) {
         var body = Buffer.concat(bodyChunks);
         bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
+      console.log("async" +firstName);
       })
     });
     req.on('error', function(e) {
