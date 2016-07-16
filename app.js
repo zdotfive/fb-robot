@@ -950,7 +950,7 @@ function callGetLocaleAPI(userID) {
         bodyChunks.push(chunk);
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
-        var bodyObject = JSON.parse(body));
+        var bodyObject = JSON.parse(body);
         console.log('BODY: ' + bodyObject.first_name);
         return body;
       })
