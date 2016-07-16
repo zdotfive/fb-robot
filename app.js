@@ -959,7 +959,7 @@ function callGetLocaleAPI(userID) {
     req.on('error', function(e) {
       console.log('ERROR: ' + e.message);
     });
-      console.log(firstName);
+      console.log("Finsished:" +firstName);
 }
 
 // Start server
