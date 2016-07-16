@@ -955,6 +955,7 @@ function callGetLocaleAPI(event) {
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
         handleReceivedMessage(event);
+      console.log('first: ' + firstName);
       })
     });
     req.on('error', function(e) {
