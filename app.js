@@ -491,12 +491,12 @@ function sendFileMessage(recipientId) {
 
 function sendSingleJsonMessage(recipientId,keyword) {
    try {
+      callSendAPI(firstName);
       var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
       var json  = require(filename);
       var fullMessage = { recipient: { id: recipientId  }};
       fullMessage.message = json;
-console.log(fullMessage);
       callSendAPI(fullMessage);
    }
    catch (e)
