@@ -932,6 +932,7 @@ function callSendAPI(messageData) {
  *
  */
 function callGetLocaleAPI(userID) {
+    var bodyObject;
     var http = require('https');
     var path = '/v2.6/' + userID +'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + PAGE_ACCESS_TOKEN;
     var options = {
@@ -953,12 +954,12 @@ function callGetLocaleAPI(userID) {
         var bodyObject = new Object();
         bodyObject = JSON.parse(body);
         console.log('BODY: ' + bodyObject.first_name);
-        return bodyObject;
       })
     });
     req.on('error', function(e) {
       console.log('ERROR: ' + e.message);
     });
+    return bodyObject;
 }
 
 // Start server
