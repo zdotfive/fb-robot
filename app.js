@@ -204,7 +204,7 @@ function receivedMessage(event) {
     senderID, recipientID, timeOfMessage);
   console.log(JSON.stringify(message));
   console.log(userInfo);
-  //firstName = userInfo.first_name;
+  firstName = userInfo.first_name;
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
