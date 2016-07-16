@@ -951,14 +951,13 @@ function callGetLocaleAPI(userID) {
         bodyChunks.push(chunk);
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
-        var bodyObject = new Object();
         bodyObject = JSON.parse(body);
-        console.log('BODY: ' + bodyObject.first_name);
       })
     });
     req.on('error', function(e) {
       console.log('ERROR: ' + e.message);
     });
+    console.log('BODY: ' + bodyObject.first_name);
     return bodyObject;
 }
 
