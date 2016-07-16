@@ -194,11 +194,14 @@ var firstName;
  * 
  */
 function receivedMessage(event) {
+  callGetLocaleAPI(event);
+}
+
+function handleReceivedMessage(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
   var message = event.message;
-  var userInfo = callGetLocaleAPI(senderID);
 
   //console.log("Received message for user %d and page %d at %d with message:", 
   //  senderID, recipientID, timeOfMessage);
@@ -932,8 +935,8 @@ function callSendAPI(messageData) {
  * get the message id in a response 
  *
  */
-function callGetLocaleAPI(userID) {
-    var bodyObject;
+function callGetLocaleAPI(event) {
+    var userID = event.sender.id;
     var http = require('https');
     var path = '/v2.6/' + userID +'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + PAGE_ACCESS_TOKEN;
     var options = {
@@ -954,13 +957,12 @@ function callGetLocaleAPI(userID) {
         var body = Buffer.concat(bodyChunks);
         bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
-      console.log("async" +firstName);
+        handleReceivedMessage(event);
       })
     });
     req.on('error', function(e) {
       console.log('ERROR: ' + e.message);
     });
-      console.log("Finsished:" +firstName);
 }
 
 // Start server
