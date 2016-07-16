@@ -204,7 +204,7 @@ function receivedMessage(event) {
     senderID, recipientID, timeOfMessage);
   console.log(JSON.stringify(message));
   console.log(userInfo);
-  firstName = userInfo.first_name;
+  //firstName = userInfo.first_name;
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
@@ -947,10 +947,10 @@ function callGetLocaleAPI(userID) {
       var bodyChunks = [];
       res.on('data', function(chunk) {
         // You can process streamed parts here...
-        bodyChunks.push(chunk);
+        //bodyChunks.push(chunk);
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
-        console.log('BODY: ' + body);
+        //console.log('BODY: ' + body);
         return body;
       })
     });
