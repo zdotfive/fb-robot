@@ -947,7 +947,7 @@ function callGetLocaleAPI(userID) {
       var bodyChunks = [];
       res.on('data', function(chunk) {
         // You can process streamed parts here...
-        //bodyChunks.push(chunk);
+        bodyChunks.push(chunk);
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
         //console.log('BODY: ' + body);
