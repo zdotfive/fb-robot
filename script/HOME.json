@@ -17,13 +17,13 @@
             },
             {
               "type": "postback",
-              "title": "I want one!",
-              "payload": "I want one"
+              "title": "Robots for Business",
+              "payload": "business"
             },
             {
               "type": "postback",
-              "title": "Tell me a Joke 😂",
-              "payload": "joke"
+              "title": "I want one!",
+              "payload": "I want one"
             }
             ]
           }, 
@@ -49,49 +49,27 @@
               "payload": "Recruiters"
             }
             ]
-          }, {
-            "title": "Family",
-            "subtitle": "Love those girls!",
-            "item_url": "https://www.facebook.com/matthewericfisher/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/family.png",
+          }, 
+          { 
+            "title": "Robot Examples",
+            "subtitle": "What can the robots do?
             "buttons": [
             {
               "type": "web_url",
-              "url": "https://facebook.com/matthewericfisher/",
-              "title": "See our pics!"
-            }, 
-            {
-              "type": "postback",
-              "title": "Learn more",
-              "payload": "Learn more"
+              "url": "http://www.messenger.com/t/EstherBot",
+              "title": "Esther's cool bot"
             },
             {
-              "type": "postback",
-              "title": "Love it in Florida",
-              "payload": "Love it in Florida"
+              "type": "web_url",
+              "url": "http://www.messenger.com/t/techcrunch",
+              "title": "TechCrunch news bot"
+            },
+            {
+              "type": "web_url",
+              "url": "https://www.messenger.com/t/hiponcho",
+              "title": "FB Poncho"
             }
-           ]
-          }, {
-            "title": "Passions",
-            "subtitle": "Chess,dogs,music",
-            "item_url": "https://www.chess.com/members/view/matthewericfisher",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/chess.png",
-            "buttons": [
-            {
-              "type": "postback",
-              "title": "Chess",
-              "payload": "Chess"
-            },
-            {
-              "type": "postback",
-              "title": "Music",
-              "payload": "Music"
-            },
-            {
-              "type": "postback",
-              "title": "Pets",
-              "payload": "Pets"
-            }]
+            ]
           }]
         }
       }
