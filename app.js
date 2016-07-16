@@ -203,7 +203,7 @@ function receivedMessage(event) {
   //console.log("Received message for user %d and page %d at %d with message:", 
   //  senderID, recipientID, timeOfMessage);
   //console.log(JSON.stringify(message));
-  console.log("UserInfo: ");  
+  console.log("UserInfo: " + userInfo);  
   //firstName = userInfo.first_name;
 
   var isEcho = message.is_echo;
@@ -951,7 +951,7 @@ function callGetLocaleAPI(userID) {
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
         var bodyObject = JSON.parse(body);
-        console.log('BODY: ' + bodyObject.first_name);
+        //console.log('BODY: ' + bodyObject.first_name);
         return bodyObject;
       })
     });
