@@ -205,9 +205,6 @@ function handleReceivedMessage(event) {
 
   //console.log("Received message for user %d and page %d at %d with message:", 
   //  senderID, recipientID, timeOfMessage);
-  //console.log(JSON.stringify(message));
-  console.log("UserInfo: " + userInfo);  
-  //firstName = userInfo.first_name;
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
