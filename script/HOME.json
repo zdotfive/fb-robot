@@ -35,7 +35,7 @@
             "buttons": [
             {
               "type": "postback",
-              "title": "Contact Matthew",
+              "title": "Contact",
               "payload": "Contact Matthew"
             }, 
             {
