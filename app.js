@@ -288,9 +288,8 @@ function handleReceivedMessage(event) {
         break        
 
       case 'user info':
-      console.log('second: ' + firstName);
         if(firstName)
-        sendTextMessage(senderID,firstName);
+            sendTextMessage(senderID,firstName);
         break        
 
 
@@ -491,7 +490,7 @@ function sendFileMessage(recipientId) {
 
 function sendSingleJsonMessage(recipientId,keyword) {
    try {
-      callSendAPI(firstName);
+      callSendAPI(recipientId,firstName);
       var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
       var json  = require(filename);
