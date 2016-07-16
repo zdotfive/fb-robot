@@ -952,13 +952,12 @@ function callGetLocaleAPI(userID) {
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
         bodyObject = JSON.parse(body);
+        firstName = bodyObject.first_name;
       })
     });
     req.on('error', function(e) {
       console.log('ERROR: ' + e.message);
     });
-    console.log('BODY: ' + bodyObject.first_name);
-    return bodyObject;
 }
 
 // Start server
