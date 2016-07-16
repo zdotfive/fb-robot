@@ -194,7 +194,7 @@ var firstName;
  * 
  */
 function receivedMessage(event) {
-  callGetLocaleAPI(event);
+  callGetLocaleAPI(event, handleReceivedMessage);
 }
 
 function handleReceivedMessage(event) {
@@ -311,6 +311,7 @@ function handleReceivedMessage(event) {
  * these fields at https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-delivered
  *
  */
+
 function receivedDeliveryConfirmation(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
@@ -337,7 +338,12 @@ function receivedDeliveryConfirmation(event) {
  * https://developers.facebook.com/docs/messenger-platform/webhook-reference/postback-received
  * 
  */
+
 function receivedPostback(event) {
+  callGetLocaleAPI(event, handleReceivedPostback);
+}
+
+function handleReceivedPostback(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfPostback = event.timestamp;
@@ -933,7 +939,7 @@ function callSendAPI(messageData) {
  * get the message id in a response 
  *
  */
-function callGetLocaleAPI(event) {
+function callGetLocaleAPI(event, handleReceived) {
     var userID = event.sender.id;
     var http = require('https');
     var path = '/v2.6/' + userID +'?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + PAGE_ACCESS_TOKEN;
@@ -955,7 +961,7 @@ function callGetLocaleAPI(event) {
         var body = Buffer.concat(bodyChunks);
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
-        handleReceivedMessage(event);
+        handleReceived(event);
       console.log('first: ' + firstName);
       })
     });
