@@ -203,8 +203,6 @@ function handleReceivedMessage(event) {
   var timeOfMessage = event.timestamp;
   var message = event.message;
 
-  console.log("Received message for user %d and page %d at %d with message:", 
-    senderID, recipientID, timeOfMessage);
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
@@ -234,6 +232,8 @@ function handleReceivedMessage(event) {
   }
 
   if (messageText) {
+  console.log("Received message for user %d and page %d at %d with message: %s", 
+    senderID, recipientID, timeOfMessage,messageText);
 
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
