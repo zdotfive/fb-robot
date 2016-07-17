@@ -17,7 +17,7 @@
             },
             {
               "type": "postback",
-              "title": "Robots for Business",
+              "title": "A Robot for your Business",
               "payload": "business"
             },
             {
