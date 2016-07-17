@@ -9,22 +9,22 @@
         {
           "content_type":"text",
           "title":"Software",
-          "payload":"Software"
+          "payload":"software"
         },
         {
           "content_type":"text",
           "title":"Languages",
-          "payload":"Languages"
+          "payload":"languages"
         },
         {
           "content_type":"text",
           "title":"Architecture",
-          "payload":"Architecture"
+          "payload":"architecture"
         },
         {
           "content_type":"text",
           "title":"Home",
-          "payload":"Home"
+          "payload":"home"
         }
       ]
 }
