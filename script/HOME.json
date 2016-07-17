@@ -36,7 +36,7 @@
             {
               "type": "postback",
               "title": "Contact",
-              "payload": "Contact Matthew"
+              "payload": "Contact"
             }, 
             {
               "type": "postback",
