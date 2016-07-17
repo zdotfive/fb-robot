@@ -203,8 +203,8 @@ function handleReceivedMessage(event) {
   var timeOfMessage = event.timestamp;
   var message = event.message;
 
-  //console.log("Received message for user %d and page %d at %d with message:", 
-  //  senderID, recipientID, timeOfMessage);
+  console.log("Received message for user %d and page %d at %d with message:", 
+    senderID, recipientID, timeOfMessage);
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
@@ -291,7 +291,6 @@ function handleReceivedMessage(event) {
         if(firstName)
             sendTextMessage(senderID,firstName);
         break        
-
 
       default:
          sendEnteredMessage(senderID, messageText);
@@ -965,7 +964,6 @@ function callGetLocaleAPI(event, handleReceived) {
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
         handleReceived(event);
-      console.log('first: ' + firstName);
       })
     });
     req.on('error', function(e) {
