@@ -516,7 +516,7 @@ function sendEnteredMessage(recipientId,messageText) {
     else if (emojiString.indexOf(messageText.substring(0,2)) > -1) {
          var maxLength = emojiString.length;
          var random = Math.floor(Math.random() * maxLength);
-         mesageText = emojiString[random];
+         messageText = emojiString[random];
          sendCustomMessage(recipientId,messageText);
     }
     else { 
