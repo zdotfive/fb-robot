@@ -517,7 +517,7 @@ console.log("emoji test: " + messageText);
          var maxLength = emojiString.length;
          var random = Math.floor(Math.random() * maxLength);
          messageText = emojiString[random];
-         sendCustomMessage(recipientId,messageText);
+         sendTextMessage(recipientId,messageText);
     }
     else { 
          sendCustomMessage(recipientId,messageText);
