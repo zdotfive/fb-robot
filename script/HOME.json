@@ -45,8 +45,8 @@
             },
             {
               "type": "postback",
-              "title": "Recruiters",
-              "payload": "Recruiters"
+              "title": "Matthew's bio",
+              "payload": "bio"
             }
             ]
           }, 
