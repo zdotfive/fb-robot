@@ -297,7 +297,7 @@ function handleReceivedMessage(event) {
 
     }
   } else if (messageAttachments) {
-    console.log("Received message attachement: " + messageAttachments.payload.url);
+    console.log("Received message attachement: " + messageAttachments.payload);
     sendTextMessage(senderID, "Message with attachment received");
   }
 }
