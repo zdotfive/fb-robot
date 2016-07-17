@@ -10,8 +10,8 @@
             "buttons": [
             {
               "type": "postback",
-              "title": "Send me a message",
-              "payload": "Send me a message"
+              "title": "Send a message",
+              "payload": "Send a message"
             },
             {
               "type": "web_url",
@@ -20,8 +20,8 @@
             },
             {
               "type": "postback",
-              "title": "Get my email address",
-              "payload": "Get my email address"
+              "title": "Get email address",
+              "payload": "Get email address"
             }
             ]
           }
