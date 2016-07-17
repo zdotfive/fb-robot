@@ -1,25 +1,20 @@
 {
-      "text": "Matthew holds a Bachelor's degree in Computer Science from The Ohio State University",
+      "text": "Matthew has a passion for Software Engineering in all its phases. He has developed a startegy Effective Software Engineering.  Click below to learn more about Effective Software Engineerining or hop over to the Tumblr blog",
       "quick_replies": [
         {
           "content_type":"text",
-          "title":"Education",
+          "title":"Why Effective?",
           "payload":"Education"
         },
         {
           "content_type":"text",
-          "title":"Software",
+          "title":"Phases",
           "payload":"Software"
         },
         {
           "content_type":"text",
-          "title":"Languages",
-          "payload":"Languages"
-        },
-        {
-          "content_type":"text",
-          "title":"Architecture",
-          "payload":"Architecture"
+          "title":"We need it!",
+          "payload":"contact"
         },
         {
           "content_type":"text",

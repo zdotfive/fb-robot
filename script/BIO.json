@@ -20,6 +20,11 @@
           "content_type":"text",
           "title":"Architecture",
           "payload":"Architecture"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
         }
       ]
 }
