@@ -1,5 +1,5 @@
 {
-      "text": "Matthew has a passion for Software Engineering in all its phases. He has developed a strategy Effective Software Engineering.  Click below to learn more about Effective Software Engineerining or hop over to the Tumblr blog",
+      "text": "Matthew has a passion for Software Engineering in all its phases. He has developed a strategy termed Effective Software Engineering.  Click below to learn more about Effective Software Engineerining or hop over to the Tumblr blog",
       "quick_replies": [
         {
           "content_type":"text",
@@ -8,13 +8,13 @@
         },
         {
           "content_type":"text",
-          "title":"Phases",
+          "title":"Effective Phases",
           "payload":"Software"
         },
         {
           "content_type":"text",
           "title":"We need it!",
-          "payload":"contact"
+          "payload":"contact matthew"
         },
         {
           "content_type":"text",
