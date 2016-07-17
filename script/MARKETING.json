@@ -1,0 +1,15 @@
+{
+      "text": "A robot is a great way to communicate business information to your potential clients. Once a user messages you, the robot can give then options about further information, for example a class schedule at a Yoga studio or more information on a teacher.  Further, a user can opt-in for more target information, for example a city could have robot notify users of upcoming local events.  Many of the concepts of email marketing can be tranferred to a robot but with a much more personalized and interactive experience.",
+      "quick_replies": [
+        {
+          "content_type":"text",
+          "title":"Lets get started!",
+          "payload":"contact"
+        },
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"Home"
+        }
+      ]
+}
