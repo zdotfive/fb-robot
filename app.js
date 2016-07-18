@@ -542,7 +542,9 @@ function sendCustomMessage(recipientId,messageText) {
 }
 
 function sendJsonMessage(recipientId,keyword) {
-  if (_.has(scriptRules, keyword.toUpperCase())) {
+  if ((_.has(scriptRules, keyword)) ||
+      (_.has(scriptRules, keyword.toUpperCase())) ||
+      (_.has(scriptRules, keyword.toLower()))) {
       sendSingleJsonMessage(recipientId,keyword);
   }
   else  {
