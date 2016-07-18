@@ -297,9 +297,7 @@ function handleReceivedMessage(event) {
 
     }
   } else if (messageAttachments) {
-    console.log("Received message attachement: " + messageAttachments[0].payload.url);
     sendJsonMessage(senderID, messageAttachments[0].payload.url);
-    //sendTextMessage(senderID, "Message with attachment received");
   }
 }
 
@@ -542,9 +540,8 @@ function sendCustomMessage(recipientId,messageText) {
 }
 
 function sendJsonMessage(recipientId,keyword) {
-  if ((_.has(scriptRules, keyword)) ||
-      (_.has(scriptRules, keyword.toUpperCase())) ||
-      (_.has(scriptRules, keyword.toLower()))) {
+  keyword = keyword.toUpperCase();
+  if (_.has(scriptRules, keyword)) {
       sendSingleJsonMessage(recipientId,keyword);
   }
   else  {
