@@ -540,7 +540,6 @@ function sendCustomMessage(recipientId,messageText) {
 }
 
 function sendJsonMessage(recipientId,keyword) {
-  keyword = keyword.toUpperCase();
   if (_.has(scriptRules, keyword)) {
       sendSingleJsonMessage(recipientId,keyword);
   }
