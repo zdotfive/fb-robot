@@ -491,6 +491,7 @@ function sendSingleJsonMessage(recipientId,keyword) {
    try {
       var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
+      console.log("sendSingleJsonMessage " + filename);
       var json  = require(filename);
       var fullMessage = { recipient: { id: recipientId  }};
       fullMessage.message = json;
