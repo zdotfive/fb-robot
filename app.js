@@ -541,7 +541,7 @@ function sendCustomMessage(recipientId,messageText) {
 
 function sendJsonMessage(recipientId,keyword) {
   console.log("sendJsonMessage " + keyword);
-  if (_.has(scriptRules, keyword)) {
+  if (_.has(scriptRules, keyword.toUpperCase())) {
       sendSingleJsonMessage(recipientId,keyword);
   }
   else  {
