@@ -512,7 +512,7 @@ function sendEnteredMessage(recipientId,messageText) {
 console.log("Previous: " + previousMessageHash.sendID);
     if( previousMessageHash.senderID === 'send a message') {
 console.log("sending a message to matthew: " + messageText);
-         sendTextMessage(1123020134434856,messageText); // send a message to Matthew directly
+         sendTextMessage(1073962542672604,messageText); // send a message to Matthew directly
     }
     else if (emojiString.indexOf(messageText.substring(0,2)) > -1) {
 console.log("emoji test: " + messageText);
