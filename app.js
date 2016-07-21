@@ -293,11 +293,11 @@ function handleReceivedMessage(event) {
         break        
 
       case 'add menu':
-        addPersisentMenu();
+        addPersistentMenu();
         break        
 
       case 'remove menu':
-        removePersisentMenu();
+        removePersistentMenu();
         break        
 
       default:
