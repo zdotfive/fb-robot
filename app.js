@@ -292,6 +292,9 @@ function handleReceivedMessage(event) {
             sendTextMessage(senderID,firstName);
         break        
 
+      case 'add menu':
+        persisentMenu();
+
       default:
          sendEnteredMessage(senderID, messageText);
 
@@ -1016,7 +1019,6 @@ function persistentMenu(){
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
 // certificate authority.
-persistentMenu();
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
