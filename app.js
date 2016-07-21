@@ -293,7 +293,12 @@ function handleReceivedMessage(event) {
         break        
 
       case 'add menu':
-        persisentMenu();
+        addPersisentMenu();
+        break        
+
+      case 'remove menu':
+        removePersisentMenu();
+        break        
 
       default:
          sendEnteredMessage(senderID, messageText);
@@ -978,7 +983,7 @@ function callGetLocaleAPI(event, handleReceived) {
 }
 
 
-function persistentMenu(){
+function addPersistentMenu(){
  request({
     url: 'https://graph.facebook.com/v2.6/me/thread_settings',
     qs: { access_token: PAGE_ACCESS_TOKEN },
@@ -989,18 +994,18 @@ function persistentMenu(){
         call_to_actions:[
             {
               type:"postback",
-              title:"FAQ",
-              payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+              title:"Home",
+              payload:"home"
             },
             {
               type:"postback",
-              title:"I Prodotti in offerta",
-              payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+              title:"Joke",
+              payload:"joke"
             },
             {
               type:"web_url",
-              title:"View Website",
-              url:"https://google.com/"
+              title:"DMS Software Website",
+              url:"http://www.dynamic-memory.com/"
             }
           ]
     }
@@ -1014,6 +1019,26 @@ function persistentMenu(){
     }
 })
 
+}
+
+function removePersistentMenu(){
+ request({
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: PAGE_ACCESS_TOKEN },
+    method: 'POST',
+    json:{
+        setting_type : "call_to_actions",
+        thread_state : "existing_thread",
+    }
+
+}, function(error, response, body) {
+    console.log(response)
+    if (error) {
+        console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+    }
+})
 }
 
 // Start server
