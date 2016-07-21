@@ -974,9 +974,49 @@ function callGetLocaleAPI(event, handleReceived) {
     });
 }
 
+
+function persistentMenu(){
+ request({
+    url: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: PAGE_ACCESS_TOKEN },
+    method: 'POST',
+    json:{
+        setting_type : "call_to_actions",
+        thread_state : "existing_thread",
+        call_to_actions:[
+            {
+              type:"postback",
+              title:"FAQ",
+              payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+            },
+            {
+              type:"postback",
+              title:"I Prodotti in offerta",
+              payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
+            },
+            {
+              type:"web_url",
+              title:"View Website",
+              url:"https://google.com/"
+            }
+          ]
+    }
+
+}, function(error, response, body) {
+    console.log(response)
+    if (error) {
+        console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+    }
+})
+
+}
+
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
 // certificate authority.
+persistentMenu();
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
