@@ -1,6 +1,10 @@
 # DMS Software Bot.  A mix of the Facebook Messenger Platform Sample, the EstherBot and some creativity
 
-This project is an example server for Messenger Platform built in Node.js. With this app, you can send it messages and it will echo them back to you. You can also see examples of the different types of Structured Messages. 
+This project is an example server for Messenger Platform built in Node.js. It was forked from the Facebook example.
+
+With this app, you can build a structued conversation to communicate with your clients. 
+
+You can also see examples of the different types of Structured Messages like buttons, carousel, quick reply, etc. 
 
 It contains the following functionality:
 
@@ -8,13 +12,11 @@ It contains the following functionality:
 * Send API 
 * Web Plugins
 * Messenger Platform v1.1 features
+* Simple Emoji support
+* Custom keyword responses
+* Structured conversation support
 
-Follow the [walk-through](https://developers.facebook.com/docs/messenger-platform/quickstart) to learn about this project in more detail.
-
-## Setup
-
-
-
+Follow the [walk-through](https://developers.facebook.com/docs/messenger-platform/quickstart) to learn about settting up your own FB robot in more detail.  This project can be used as a substitute in the tutorial.
 
 ## License
 
