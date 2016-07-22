@@ -15,6 +15,7 @@
     "ROBOT" : "ROBOT.json",
     "EDUCATION": "EDUCATION.json",
     "SOFTWARE": "SOFTWARE.json",
+    "EFFECTIVE": "EFFECTIVE.json",
     "LANGUAGES": "LANGUAGES.json",
     "ARCHITECTURE": "ARCHITECTURE.json",
     "BUSINESS": "BUSINESS.json",
