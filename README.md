@@ -16,7 +16,7 @@ It contains the following functionality:
 * Custom keyword responses
 * Structured conversation support
 
-Follow the [walk-through](https://developers.facebook.com/docs/messenger-platform/quickstart) to learn about settting up your own FB robot in more detail.  This project can be used as a substitute in the tutorial.
+Follow the [walk-through](https://developers.facebook.com/docs/messenger-platform/quickstart) to learn about settting up your own FB robot in more detail.  This project can be used as a substitute for the github project in the tutorial.
 
 ## License
 
@@ -26,7 +26,7 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 
 1. Sign up for you own Github account
 2. Fork this project so that you can edit it
-3. Follow the steps in the Facebook quickstart to setup your Page
+3. Follow the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page
 4. Set the values in `config/default.json` before running the sample. Descriptions of each parameter can be found in `app.js`. Alternatively, you can set the corresponding environment variables as defined in `app.js`.  Replace values for `APP_ID` and `PAGE_ID` in `public/index.html`.
 5. Sign up for a Heroku account
 6. Create a new app in Heroku and pick a uniqe name for it
