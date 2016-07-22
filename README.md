@@ -27,25 +27,30 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 1. Sign up for you own Github account
 2. Fork this project so that you can edit it
 3. Follow the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page
-4. Set the values in `config/default.json` before running the sample. Descriptions of each parameter can be found in `app.js`. Alternatively, you can set the corresponding environment variables as defined in `app.js`.  Replace values for `APP_ID` and `PAGE_ID` in `public/index.html`.
+4. Set the values in `config/default.json` before running the bot on Heroku. These values must be right or the bot will not function.  appSecret is located on the Settings page.  pageAccessToken is on the Messenger page.  validationToken is a value that you select when you setup the Webhooks.   
+5. Replace values for `app_id` and `page_id` in `public/index.html`.  The value for APP_ID is on the Settings page on your Facebook app screen, there are three places in the file to replace the value one is called app_id and the other two are messenger_app_id.  The page_id is in the file twice, it is the name of the app your created in Facebook.  
 5. Sign up for a Heroku account
 6. Create a new app in Heroku and pick a uniqe name for it
 7. In the deploy tab, associate your app with the Github respository that you have forked. You can enable Automatic Deploys or do the manual deploy for quicker response.
+8. Deploy the app in Heroku
 
-Thats it. If everything is good, you can open your bot in Messenger and it will respond.  The bot will only respond to adminstrator and other people under the 'Roles' pages.  To get the bot open to the world you have to go through a review process. It took less than a week for my bot.
+Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' pages in Facebook.  
+
+To get the bot open to the world you have to go through a review process. It took less than a week for my bot.
 
 ## Adding context to your bot
 The script.json file will guide the bot to the content.  The script.json associates keywords with filenames under the script directory.  The HOME keyword is associated with script/HOME.json for example.  You can edit the file in Github with the pencil icon.  The file is in capital letters but the user can type in mixed case.
 
-The files in the script directory give you examples of the various widgets that FB allows.  You can copy the files and change the details for your own bot.  The syntax is precise so be careful when making changes.  The missing or trailing comma is the easiest misktake to make.
+The last line in the file is a URL for the thumbs up button.  The attachements the bot can look at the incoming URL and respond as if something was typed in.  You can get the URL for FB images from the Heroku logs. 
+
+The files in the script directory give you examples of the various widgets that FB allows.  You can copy the files and change the details for your own bot.  The syntax is precise so be careful when making changes.  The missing or trailing comma is the easiest misktake to make.  You can use http://jsonlint.com to validate the json.  
+
+You can make new files in the script directory through Github.  Once you have your new file complete make sure to add the proper keywords to the script.json master file.
 
 ##Add images
-You have to upload images to the Github project before you can use them.  Once the image is available then 
+You have to upload images to the Github project before you can use them,  https://help.github.com/articles/adding-a-file-to-a-repository/
 
-
-##Bring it altogether
-
-⚠️ **Note:** If you're not familiar with the JSON syntax you can always paste your script into http://jsonlint.com/ to make sure your syntax in order.
+Once the image is upload then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
 
 ## Check your bot's logs on heroku (Thanks to Esther Crawford for this bit)
 
