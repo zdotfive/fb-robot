@@ -629,11 +629,14 @@ function sendJoke(recipientId) {
  *
  */
 function sendRandomImage(recipientId) {
+    var http = require('http');
+    var options = {
+	    host: 'http://photo.net',
+	    path: '/photodb/random-photo' 
+       };
 
-    var req = http.get({ 
-            host: 'http://photo.net',
-            path: '/photodb/random-photo' 
-       }, function(res) {
+
+    var req = http.get(options,function(res) {
       console.log('STATUS: ' + res.statusCode);
       console.log('HEADERS: ' + JSON.stringify(res.headers));
 
