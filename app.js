@@ -647,7 +647,7 @@ function sendRandomImage(recipientId) {
         bodyChunks.push(chunk);
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
-        sendImageMessege(recipientId,"http://gallery.photo.net/photo/7584479-md.jpg");
+        sendImageMessage(recipientId,"http://gallery.photo.net/photo/7584479-md.jpg");
       })
     });
     req.on('error', function(e) {
