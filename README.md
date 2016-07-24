@@ -39,7 +39,7 @@ Thats it. If everything is good, you can open your Page in Messenger and the bot
 To get the bot open to the world you have to go through a review process. It took less than a week for my bot.
 
 ## Adding context to your bot
-The script.json file will guide the bot to the content.  The script.json associates keywords with filenames under the script directory.  The HOME keyword is associated with script/HOME.json for example.  You can edit the file in Github with the pencil icon.  The file is in capital letters but the user can type in mixed case.
+The script.json file will guide the bot to the content.  The script.json associates keywords with filenames under the script directory.  The HOME keyword is associated with script/HOME.json for example.  You can edit the file in Github with the pencil icon.  The keywords and filenames are in capital letters but the user can type in mixed case.
 
 The last line in the file is a URL for the thumbs up button.  The attachements the bot can look at the incoming URL and respond as if something was typed in.  You can get the URL for FB images from the Heroku logs. 
 
@@ -50,7 +50,7 @@ You can make new files in the script directory through Github.  Once you have yo
 ##Add images
 You have to upload images to the Github project before you can use them,  https://help.github.com/articles/adding-a-file-to-a-repository/
 
-Once the image is upload then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
+Once the image is uploaded then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
 
 ## Check your bot's logs on heroku (Thanks to Esther Crawford for this bit)
 
