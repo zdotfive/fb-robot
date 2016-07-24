@@ -631,7 +631,7 @@ function sendJoke(recipientId) {
 function sendRandomImage(recipientId) {
     var http = require('http');
     var options = {
-	    host: 'http://photo.net',
+	    host: 'photo.net',
 	    path: '/photodb/random-photo' 
        };
 
