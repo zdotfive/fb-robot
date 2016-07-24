@@ -650,11 +650,13 @@ function sendRandomImage(recipientId) {
         // Parse html and look for image url
 
         var index = body.indexOf('src="http://gallery.photo.net/photo/');
+        console.log(body);
         if(index > -1)
         {
            var startIndex = index+5;
+        console.log(startIndex);
            // look for the following quote that closes the src= tag
-           var endIndex =   startIndex + body.substring(startIndex).indexOf('"') -1;
+           var endIndex =   startIndex + body.substring(startIndex).indexOf('"');
            if(endIndex > startIndex)
            {
                var url =  body.substring(startIndex,endIndex);
