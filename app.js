@@ -543,7 +543,7 @@ function sendCustomMessage(recipientId,messageText) {
         break        
 
       case 'image':
-        sendImage(recipientId);
+        sendRandomImage(recipientId);
         break        
 
       case 'who':
@@ -628,7 +628,7 @@ function sendJoke(recipientId) {
  * Send an image with Quick Reply buttons.
  *
  */
-function sendImage(recipientId) {
+function sendRandomImage(recipientId) {
 
     var req = http.get({ 
             host: 'http://photo.net',
@@ -650,6 +650,7 @@ function sendImage(recipientId) {
     req.on('error', function(e) {
       console.log('ERROR: ' + e.message);
     });
+}
 
 /*
  * Send a button message using the Send API.
