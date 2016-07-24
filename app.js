@@ -625,7 +625,7 @@ function sendJoke(recipientId) {
 }
 
 /*
- * Send an image with Quick Reply buttons.
+ * Simple example of an external http call with parsing.
  *
  */
 function sendRandomImage(recipientId) {
@@ -637,8 +637,8 @@ function sendRandomImage(recipientId) {
 
 
     var req = http.get(options,function(res) {
-      console.log('STATUS: ' + res.statusCode);
-      console.log('HEADERS: ' + JSON.stringify(res.headers));
+      //console.log('STATUS: ' + res.statusCode);
+      //console.log('HEADERS: ' + JSON.stringify(res.headers));
 
       // Buffer the body entirely for processing as a whole.
       var bodyChunks = [];
@@ -647,7 +647,21 @@ function sendRandomImage(recipientId) {
         bodyChunks.push(chunk);
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
-        sendImageMessage(recipientId,"http://gallery.photo.net/photo/7584479-md.jpg");
+        // Parse html and look for image url
+
+        var index = body.indexof('src="http://gallery.photo.net/photo/');
+        if(index > -1)
+        {
+           var startIndex = index+5;
+           // look for the following quote that closes the src= tag
+           var endIndex =   startIndex + body.substring(startIndex).indexOf('"') -1;
+           if(endIndex > startIndex)
+           {
+               var url =  body.substring(startIndex,endIndex);
+               console.log(url);
+               sendImageMessage(recipientId,url);
+           }
+        }
       })
     });
     req.on('error', function(e) {
