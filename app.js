@@ -649,7 +649,7 @@ function sendRandomImage(recipientId) {
         var body = Buffer.concat(bodyChunks);
         // Parse html and look for image url
 
-        var index = body.indexof('src="http://gallery.photo.net/photo/');
+        var index = body.indexOf('src="http://gallery.photo.net/photo/');
         if(index > -1)
         {
            var startIndex = index+5;
