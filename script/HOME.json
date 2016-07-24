@@ -71,6 +71,7 @@
               "url": "http://www.messenger.com/t/techcrunch",
               "title": "TechCrunch news bot"
             }
+            ]
           },
           { 
             "title": "Robot Examples",
@@ -92,8 +93,8 @@
               "type": "web_url",
               "url": "http://www.messenger.com/t/techcrunch",
               "title": "TechCrunch news bot"
-            ]
             }
+            ]
           }
           ]
         }
