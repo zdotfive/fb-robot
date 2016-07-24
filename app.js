@@ -542,6 +542,10 @@ function sendCustomMessage(recipientId,messageText) {
         sendJoke(recipientId);
         break        
 
+      case 'image':
+        sendJoke(recipientId);
+        break        
+
       default:
          sendJsonMessage(recipientId,messageText);
 
