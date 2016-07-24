@@ -51,15 +51,37 @@
             ]
           }, 
           { 
-            "title": "Robot Examples",
-            "subtitle": "Some great robots",
-            "item_url": "https://developers.facebook.com/products/messenger/",
+            "title": "Custom Examples",
+            "subtitle": "A few small app to give an idea of the possibilites",
+            "item_url": "https://dynamic-memory.com",
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
             "buttons": [
             {
               "type": "postback",
               "title": "Tell me a joke 😜",
               "payload": "joke"
+            },
+            {
+              "type": "postback",
+              "title": "Random Image",
+              "payload": "image"
+            },
+            {
+              "type": "web_url",
+              "url": "http://www.messenger.com/t/techcrunch",
+              "title": "TechCrunch news bot"
+            }
+          },
+          { 
+            "title": "Robot Examples",
+            "subtitle": "Some great robots",
+            "item_url": "https://developers.facebook.com/products/messenger/",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
+            "buttons": [
+            {
+              "type": "web_url",
+              "url": "https://www.messenger.com/t/SpringNYC",
+              "title": "Spring NYC store"
             },
             {
               "type": "web_url",
@@ -70,9 +92,10 @@
               "type": "web_url",
               "url": "http://www.messenger.com/t/techcrunch",
               "title": "TechCrunch news bot"
-            }
             ]
-          }]
+            }
+          }
+          ]
         }
       }
     }
