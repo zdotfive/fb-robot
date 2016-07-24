@@ -648,18 +648,20 @@ function sendRandomImage(recipientId) {
       }).on('end', function() {
         var body = Buffer.concat(bodyChunks);
         // Parse html and look for image url
+        var bodyString = body.toString('utf8');
 
-        var index = body.indexOf('src="http://gallery.photo.net/photo/');
-        console.log(body);
+        var index = bodyString.indexOf('src="http://gallery.photo.net/photo/');
+        console.log(bodyString);
         if(index > -1)
         {
            var startIndex = index+5;
         console.log(startIndex);
            // look for the following quote that closes the src= tag
-           var endIndex =   startIndex + body.substring(startIndex).indexOf('"');
+
+           var endIndex =   startIndex + bodyString.substring(startIndex).indexOf('"');
            if(endIndex > startIndex)
            {
-               var url =  body.substring(startIndex,endIndex);
+               var url =  bodyString.substring(startIndex,endIndex);
                console.log(url);
                sendImageMessage(recipientId,url);
            }
