@@ -31,7 +31,7 @@
             "title": "DMS Software",
             "subtitle": "Software Engineering is awesome",
             "item_url": "http://www.dynamic-memory.com/",               
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/danger-man-at-work-hi.png",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/evolution.png",
             "buttons": [
             {
               "type": "postback",
@@ -54,7 +54,7 @@
             "title": "Custom Examples",
             "subtitle": "A few small app to give an idea of the possibilites",
             "item_url": "https://dynamic-memory.com",
-            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/danger-man-at-work-hi.png",
             "buttons": [
             {
               "type": "postback",
