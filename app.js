@@ -240,7 +240,7 @@ function handleReceivedMessage(event) {
     // the text we received.
     switch (messageText.toLowerCase()) {
       case 'image':
-        sendImageMessage(senderID);
+        sendImageMessage(senderID, "http://messengerdemo.parseapp.com/img/rift.png");
         break;
 
       case 'gif':
@@ -389,7 +389,7 @@ function receivedMessageRead(event) {
  * Send an image using the Send API.
  *
  */
-function sendImageMessage(recipientId) {
+function sendImageMessage(recipientId, path) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -398,7 +398,7 @@ function sendImageMessage(recipientId) {
       attachment: {
         type: "image",
         payload: {
-          url: "http://messengerdemo.parseapp.com/img/rift.png"
+          url: path
         }
       }
     }
@@ -543,7 +543,11 @@ function sendCustomMessage(recipientId,messageText) {
         break        
 
       case 'image':
-        sendJoke(recipientId);
+        sendImage(recipientId);
+        break        
+
+      case 'who':
+        sendLocale(recipientId);
         break        
 
       default:
@@ -619,6 +623,33 @@ function sendJoke(recipientId) {
 
   callSendAPI(messageData);
 }
+
+/*
+ * Send an image with Quick Reply buttons.
+ *
+ */
+function sendImage(recipientId) {
+
+    var req = http.get({ 
+            host: 'http://photo.net',
+            path: '/photodb/random-photo' 
+       }, function(res) {
+      console.log('STATUS: ' + res.statusCode);
+      console.log('HEADERS: ' + JSON.stringify(res.headers));
+
+      // Buffer the body entirely for processing as a whole.
+      var bodyChunks = [];
+      res.on('data', function(chunk) {
+        // You can process streamed parts here...
+        bodyChunks.push(chunk);
+      }).on('end', function() {
+        var body = Buffer.concat(bodyChunks);
+        sendImageMessege(recipientId,"http://gallery.photo.net/photo/7584479-md.jpg");
+      })
+    });
+    req.on('error', function(e) {
+      console.log('ERROR: ' + e.message);
+    });
 
 /*
  * Send a button message using the Send API.
