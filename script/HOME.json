@@ -67,9 +67,10 @@
               "payload": "image"
             },
             {
-              "type": "web_url",
-              "url": "http://www.messenger.com/t/techcrunch",
-              "title": "TechCrunch news bot"
+              "type": "postback",
+              "title": "Who am I?",
+              "payload": "who"
+            }
             }
             ]
           },

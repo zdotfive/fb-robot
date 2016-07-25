@@ -178,6 +178,7 @@ function receivedAuthentication(event) {
 }
 
 var firstName; 
+var lastName; 
 
 /*
  * Message Event
@@ -625,6 +626,33 @@ function sendJoke(recipientId) {
 }
 
 /*
+ * Send the user information back, the bot grabs this for every message
+ *
+ */
+function sendLocale(recipientId) {
+
+  var nameString = firstName + " " + lastName;
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: nameString,
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Home",
+          "payload":"home"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+/*
  * Simple example of an external http call with parsing.
  *
  */
@@ -1031,6 +1059,7 @@ function callGetLocaleAPI(event, handleReceived) {
         var body = Buffer.concat(bodyChunks);
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
+        lasttName = bodyObject.last_name;
         handleReceived(event);
       })
     });
