@@ -22,7 +22,7 @@
             },
             {
               "type": "postback",
-              "title": "I want one!",
+              "title": "I want a Bot!",
               "payload": "I want one"
             }
             ]
