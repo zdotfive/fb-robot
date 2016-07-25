@@ -12,12 +12,12 @@
             "buttons": [
             {
               "type": "postback",
-              "title": "What is this Robot?",
+              "title": "What is this Bot?",
               "payload": "What is this Robot?"
             },
             {
               "type": "postback",
-              "title": "Your Business Robot",
+              "title": "Your Business Bot",
               "payload": "business"
             },
             {
@@ -74,8 +74,8 @@
             ]
           },
           { 
-            "title": "Robot Examples",
-            "subtitle": "Some great robots",
+            "title": "Bot Examples",
+            "subtitle": "Some great bots",
             "item_url": "https://developers.facebook.com/products/messenger/",
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
             "buttons": [
