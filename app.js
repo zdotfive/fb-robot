@@ -1059,7 +1059,7 @@ function callGetLocaleAPI(event, handleReceived) {
         var body = Buffer.concat(bodyChunks);
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
-        lasttName = bodyObject.last_name;
+        lastName = bodyObject.last_name;
         handleReceived(event);
       })
     });
