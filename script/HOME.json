@@ -52,7 +52,7 @@
           }, 
           { 
             "title": "Custom Examples",
-            "subtitle": "A few small app to give an idea of the possibilites",
+            "subtitle": "A few small apps to give an idea of the possibilites",
             "item_url": "https://dynamic-memory.com",
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/danger-man-at-work-hi.png",
             "buttons": [
