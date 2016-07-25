@@ -5,8 +5,8 @@
          "template_type": "generic",
           "elements": [
           {
-            "title": "Robots",
-            "subtitle": "The rise of the ChatBot!",
+            "title": "Bots",
+            "subtitle": "The rise of the Facebook Bot!",
             "item_url": "http://www.dynamic-memory.com/",               
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/robot.png",
             "buttons": [
