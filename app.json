@@ -3,7 +3,7 @@
   "description": "An example Facebook Bot, bot.",
   "keywords": ["esther", "bot", "express"],
   "website": "https://estherbot.com",
-  "repository": "https://github.com/esthercrawford/smooch-bot-example",
+  "repository": "https://github.com/matthewericfisher/fb-robot",
   "logo": "http://www.estherbot.com/wp-content/uploads/2016/03/EstherBot-photo.png",
   "env": {
     "SMOOCH_APP_TOKEN": {
