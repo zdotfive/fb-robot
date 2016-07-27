@@ -36,7 +36,7 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 10. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.herokuapp.com/webhook.  'your-bot-name' is replaced with the Heroku name that you choose.  Select a Validation Token on the Facebook side and add it to the Heroku screen. 
 8. 'Deploy for Free' in Heroku
 
-Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' pages in Facebook.  
+Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' page in Facebook.  
 
 To get the bot open to the world you have to go through a review process. It took less than a week for my bot.
 
