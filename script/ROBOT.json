@@ -3,7 +3,7 @@
         "type": "template",
         "payload": {
           "template_type": "button",
-          "text": "This robot is a mashup of Facebook, Heroku, GitHub, JavaScript and JSON. You can make your own with no coding! This robot is based on an example robot by Esther Crawford and team. See Github for the code",
+          "text": "This bot is a mashup of Facebook, Heroku, GitHub, JavaScript and JSON. You can make your own with no coding! This bot is partly based on an example bot by Esther Crawford and team. See Github for the code",
           "buttons":[
           {
             "type": "web_url",
