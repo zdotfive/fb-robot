@@ -1,0 +1,22 @@
+{
+  "name": "DMS Bot",
+  "description": "An example Facebook bot",
+  "keywords": ["facebook", "bot", "cool"],
+  "website": "https://dynamic-memory.com",
+  "repository": "https://github.com/matthewericfisher/fb-robot",
+  "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png",
+  "env": {
+    "APP_SECRET": {
+      "description": "You Facebook Messager App Secret from the Settings page",
+      "required": true
+    },
+    "PAGE_ACCESS_TOKEN": {
+      "description": "You Page Access Token from the Messenger->Settings page",
+      "required": true
+    },
+    "Validation Token": {
+      "description": "Your Validation Token from the Webhooks setup screen.  If you forget this, go and add the Webhooks again under + Add Products",
+      "required": true
+    }
+  }
+}

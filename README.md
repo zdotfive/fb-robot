@@ -26,12 +26,14 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 
 1. Sign up for you own Github account
 2. Fork this project so that you can edit it
-3. Follow the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page
-4. Set the values in `config/default.json` before running the bot on Heroku. These values must be right or the bot will not function.  appSecret is located on the Settings page.  pageAccessToken is on the Messenger page.  validationToken is a value that you select when you setup the Webhooks.   
-5. Replace values for `app_id` and `page_id` in `public/index.html`.  The value for APP_ID is on the Settings page on your Facebook app screen, there are three places in the file to replace the value one is called app_id and the other two are messenger_app_id.  The page_id is in the file twice, it is the name of the app your created in Facebook.  
-5. Sign up for a Heroku account
-6. Create a new app in Heroku and pick a uniqe name for it
-7. In the deploy tab, associate your app with the Github respository that you have forked. You can enable Automatic Deploys or do the manual deploy for quicker response.
+3. Review the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page.  Go ahead an do step 1
+4.Sign up for a Heroku account
+5. Hit this button to setup the app in Heroku.
+ [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/matthewericfisher/fb-robot)
+7. Pick a name for your app and remember it
+8. In the Facebook console, get the App Secret from the main Settings page.  Add it to the Heroku setup window
+9. In the Facebook console, generate the Page Access Token from the Messenger -> Settings tab. Add it to the Heroku setup  window
+10. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.heroku.com/webhook.  'your-bot-name' is replaced with the Heroku app name that you chose.  Select a Validation Token and add it to the Heroku screen. 
 8. Deploy the app in Heroku
 
 Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' pages in Facebook.  
