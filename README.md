@@ -29,7 +29,8 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 3. Follow the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page
 4. Don't worry about setting values in `config/default.json`, we will do that as part of the Heroku setup.   
 5.Sign up for a Heroku account
-6. Create a new app in Heroku and pick a uniqe name for it
+6. Hit this button to setup the app in Heroku.
+ [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/matthewericfisher/fb-robot)
 7. In the deploy tab, associate your app with the Github respository that you have forked. You can enable Automatic Deploys or do the manual deploy for quicker response.
 8. Deploy the app in Heroku
 
