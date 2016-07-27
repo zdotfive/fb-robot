@@ -132,7 +132,7 @@ function verifyRequestSignature(req, res, buf) {
   if (!signature) {
     // For testing, let's log an error. In production, you should throw an 
     // error.
-    console.error("Couldn't validate the signature.");
+    console.error("Couldn't validate the signature with app secret:" + APP_SECRET);
   } else {
     var elements = signature.split('=');
     var method = elements[0];
