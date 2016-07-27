@@ -1,8 +1,8 @@
 {
   "name": "DMS Bot",
-  "description": "An example Facebook bot",
+  "description": "example, An example Facebook bot",
   "keywords": ["facebook", "bot", "cool"],
-  "website": "https://dynamic-memory.com",
+  "website": "http://dynamic-memory.com",
   "repository": "https://github.com/matthewericfisher/fb-robot",
   "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png",
   "env": {
