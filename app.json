@@ -1,19 +1,19 @@
 {
   "name": "DMS Software Bot",
-  "description": "An example Facebook Bot, bot.",
+  "description": "An example Facebook Bot.",
   "repository": "https://github.com/matthewericfisher/fb-robot",
   "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png",
   "env": {
-    "SMOOCH_APP_TOKEN": {
-      "description": "Your Smooch app token which is used to initialize the web widget.",
+    "APP_SECRET": {
+      "description": "The App Secret from the Facebook Settings page",
       "required": true
     },
-    "SMOOCH_KEY_ID": {
-      "description": "Your Smooch key ID, used to talk to the Smooch API",
+    "PAGE_ACCESS_TOKEN": {
+      "description": "Page Access Token from the Facebook Messenger Settings page",
       "required": true
     },
-    "SMOOCH_SECRET": {
-      "description": "Your Smooch secret, used to talk to the Smooch API",
+    "VALIDATION_TOKEN": {
+      "description": "Validation Token from Facebook Webhooks setup page.  If you forget this, you must +Add Product and select Webhooks",
       "required": true
     }
   }
