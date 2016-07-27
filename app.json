@@ -1,6 +1,6 @@
 {
-  "name": "Esther Bot",
-  "description": "Esther, bot.",
+  "name": "DMS Software Bot",
+  "description": "An example Facebook Bot, bot.",
   "keywords": ["esther", "bot", "express"],
   "website": "https://estherbot.com",
   "repository": "https://github.com/esthercrawford/smooch-bot-example",
