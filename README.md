@@ -1,4 +1,4 @@
-# DMS Software Bot.  A mix of the Facebook Messenger Platform Sample, the EstherBot and some creativity
+# DMS Software Bot.  A simple conversation bot for Facebook
 
 This project is an example server for Messenger Platform built in Node.js. It was forked from the Facebook example.
 
