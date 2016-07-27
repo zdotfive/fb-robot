@@ -27,9 +27,8 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 1. Sign up for you own Github account
 2. Fork this project so that you can edit it
 3. Follow the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page
-4. Set the values in `config/default.json` before running the bot on Heroku. These values must be right or the bot will not function.  appSecret is located on the Settings page.  pageAccessToken is on the Messenger page.  validationToken is a value that you select when you setup the Webhooks.   
-5. Replace values for `app_id` and `page_id` in `public/index.html`.  The value for APP_ID is on the Settings page on your Facebook app screen, there are three places in the file to replace the value one is called app_id and the other two are messenger_app_id.  The page_id is in the file twice, it is the name of the app your created in Facebook.  
-5. Sign up for a Heroku account
+4. Don't worry about setting values in `config/default.json`, we will do that as part of the Heroku setup.   
+5.Sign up for a Heroku account
 6. Create a new app in Heroku and pick a uniqe name for it
 7. In the deploy tab, associate your app with the Github respository that you have forked. You can enable Automatic Deploys or do the manual deploy for quicker response.
 8. Deploy the app in Heroku
