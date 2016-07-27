@@ -4,7 +4,7 @@
   "keywords": ["facebook", "bot", "cool"],
   "website": "https://dynamic-memory.com",
   "repository": "https://github.com/matthewericfisher/fb-robot",
-  "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png,
+  "logo": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/icon.png",
   "env": {
     "APP_SECRET": {
       "description": "You Facebook Messager App Secret from the Settings page",
