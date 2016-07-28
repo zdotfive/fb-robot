@@ -54,6 +54,10 @@ You have to upload images to the Github project before you can use them,  https:
 
 Once the image is uploaded then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so be careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
 
+## Deploy on Heroku
+
+One your changes are maded and commited on Github, you will need to restart the bot on Heroku.  Go to the 'Deploy' tab in the app dashboard.  Associate the app to your Github project with the Github button, you only need to do this once.  Down at the bottom of the page, hit the 'Deploy' button to restart.  You can 'Enable Automatic Deployment' but hit the button manually seems a bit quicker for me.  
+
 ## Check your bot's logs on heroku (Thanks to Esther Crawford for this bit)
 
 If there's a bug in your code, checking the heroku logs is the best way to figure out what's going wrong. Here's how:
