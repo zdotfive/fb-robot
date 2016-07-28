@@ -1,4 +1,4 @@
-# DMS Software Bot.  A mix of the Facebook Messenger Platform Sample, the EstherBot and some creativity
+# DMS Software Bot.  A simple conversation bot for Facebook
 
 This project is an example server for Messenger Platform built in Node.js. It was forked from the Facebook example.
 
@@ -33,10 +33,10 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 7. Pick a name for your app and remember it
 8. In the Facebook console, get the App Secret from the main Settings page.  Add it to the Heroku setup window
 9. In the Facebook console, generate the Page Access Token from the Messenger -> Settings tab. Add it to the Heroku setup  window
-10. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.heroku.com/webhook.  'your-bot-name' is replaced with the Heroku app name that you chose.  Select a Validation Token and add it to the Heroku screen. 
-8. Deploy the app in Heroku
+10. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.herokuapp.com/webhook.  'your-bot-name' is replaced with the Heroku name that you choose.  Select a Validation Token on the Facebook side and add it to the Heroku screen. 
+8. 'Deploy for Free' in Heroku
 
-Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' pages in Facebook.  
+Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' page in Facebook.  
 
 To get the bot open to the world you have to go through a review process. It took less than a week for my bot.
 
@@ -45,14 +45,14 @@ The script.json file will guide the bot to the content.  The script.json associa
 
 The last line in the file is a URL for the thumbs up button.  The attachements the bot can look at the incoming URL and respond as if something was typed in.  You can get the URL for FB images from the Heroku logs. 
 
-The files in the script directory give you examples of the various widgets that FB allows.  You can copy the files and change the details for your own bot.  The syntax is precise so be careful when making changes.  The missing or trailing comma is the easiest misktake to make.  You can use http://jsonlint.com to validate the json.  
+The files in the script directory give you examples of the various widgets that FB allows.  You can copy the files and change the details for your own bot.  The syntax is precise so be careful when making changes.  The missing or trailing comma is the easiest mistake to make.  You can use http://jsonlint.com to validate the json.  
 
 You can make new files in the script directory through Github.  Once you have your new file complete make sure to add the proper keywords to the script.json master file.
 
 ##Add images
 You have to upload images to the Github project before you can use them,  https://help.github.com/articles/adding-a-file-to-a-repository/
 
-Once the image is uploaded then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
+Once the image is uploaded then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so be careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
 
 ## Check your bot's logs on heroku (Thanks to Esther Crawford for this bit)
 
