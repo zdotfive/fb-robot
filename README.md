@@ -35,7 +35,7 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 9. In the Facebook console, generate the Page Access Token from the Messenger -> Settings tab. Add it to the Heroku setup  window
 10. Pick a password as your Validation Token.
 11. 'Deploy for Free' in Heroku
-12. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.herokuapp.com/webhook.  'your-bot-name' will be replaced with the Heroku app name that you chose.  Add your Validation Token in the proper field.    Select all the message types for delivery.
+12. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.herokuapp.com/webhook.  'your-bot-name' will be replaced with the Heroku app name that you chose.  Add your Validation Token in the proper field.    Subscribe to  all the message types for delivery.
 
 Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' page in Facebook.  
 
