@@ -12,7 +12,6 @@
 
 const 
   bodyParser = require('body-parser'),
-  config = require('config'),
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
@@ -21,6 +20,7 @@ const
 const _ = require('lodash');
 const   scriptRules = require('./script.json');
 const   jokes = require('./script/JOKES.json');
+
 
 var previousMessageHash = {};
 
@@ -33,24 +33,18 @@ app.use(express.static('public'));
 
 /*
  * Be sure to setup your config values before running this code. You can 
- * set them using environment variables or modifying the config file in /config.
+ * set them using environment variables 
  *
  */
 
 // App Secret can be retrieved from the App Dashboard
-const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? 
-  process.env.MESSENGER_APP_SECRET :
-  config.get('appSecret');
+const APP_SECRET = process.env.APP_SECRET ;
 
 // Arbitrary value used to validate a webhook
-const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
-  (process.env.MESSENGER_VALIDATION_TOKEN) :
-  config.get('validationToken');
+const VALIDATION_TOKEN = process.env.VALIDATION_TOKEN;
 
 // Generate a page access token for your page from the App Dashboard
-const PAGE_ACCESS_TOKEN = (process.env.MESSENGER_PAGE_ACCESS_TOKEN) ?
-  (process.env.MESSENGER_PAGE_ACCESS_TOKEN) :
-  config.get('pageAccessToken');
+const PAGE_ACCESS_TOKEN = process.env.MESSENGER_PAGE_ACCESS_TOKEN;
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN)) {
   console.error("Missing config values");
