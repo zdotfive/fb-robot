@@ -26,8 +26,8 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 
 1. Sign up for you own Github account
 2. Fork this project so that you can edit it
-3. Review the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page.  Go ahead an do step 1
-4.Sign up for a Heroku account
+3. Review the steps in the Facebook [walk-through] (https://developers.facebook.com/docs/messenger-platform/quickstart) to setup your Page.  Go ahead an do step 1.
+4. Sign up for a Heroku account
 5. Hit this button to setup the app in Heroku.
  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/matthewericfisher/fb-robot)
 7. Pick a name for your app and remember it
