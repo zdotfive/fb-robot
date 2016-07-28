@@ -116,7 +116,7 @@ If there's a bug in your code, checking the heroku logs is the best way to figur
 
     Did you notice the `SyntaxError` part? It looks like there's a problem in my script.json. If I inspect that file in github I'll see that indeed, I have a stray comma at the end if the second to last line.
 
-    ![image](/img/script-error.png)
+    
 
     After I remove that comma and redeploy, everything will return to normal.
 
