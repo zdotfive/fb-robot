@@ -740,101 +740,106 @@ function sendGenericMessage(recipientId) {
     recipient: {
       id: recipientId
     },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "generic",
-          elements: [
+    message: 
+    {
+      "attachment": {
+        "type": "template",
+        "payload": {
+         "template_type": "generic",
+          "elements": [
           {
-            title: "Robots",
-            subtitle: "The rise of the ChatBot!",
-            item_url: "http://www.dynamic-memory.com/",               
-            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/robot.png",
-            buttons: [
+            "title": "Bots",
+            "subtitle": "The rise of the Facebook Bot!",
+            "item_url": "http://www.dynamic-memory.com/",               
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/robot.png",
+            "buttons": [
             {
-              type: "postback",
-              title: "What is this Robot?",
-              payload: "What is this Robot?",
+              "type": "postback",
+              "title": "What is this Bot?",
+              "payload": "What is this Robot?"
             },
             {
-              type: "postback",
-              title: "I want one",
-              payload: "I want one",
+              "type": "postback",
+              "title": "Your Business Bot",
+              "payload": "business"
             },
             {
-              type: "postback",
-              title: "How does it work?",
-              payload: "How does it work?",
+              "type": "postback",
+              "title": "I want a Bot!",
+              "payload": "I want one"
             }
             ]
           }, 
           {
-            title: "Career",
-            subtitle: "Software Engineering is awesome",
-            item_url: "http://www.dynamic-memory.com/",               
-            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/danger-man-at-work-hi.png",
-            buttons: [
+            "title": "DMS Software",
+            "subtitle": "Software Engineering is awesome",
+            "item_url": "http://www.dynamic-memory.com/",               
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/evolution.png",
+            "buttons": [
             {
-              type: "web_url",
-              url: "http://www.dynamic-memory.com",
-              title: "DMS Software website"
+              "type": "postback",
+              "title": "Contact",
+              "payload": "Contact"
             }, 
             {
-              type: "postback",
-              title: "Social media",
-              payload: "Social media",
+              "type": "postback",
+              "title": "Social media",
+              "payload": "Social media"
             },
             {
-              type: "postback",
-              title: "Recruiters",
-              payload: "Recruiters",
+              "type": "postback",
+              "title": "Matthew's bio",
+              "payload": "bio"
             }
             ]
-          }, {
-            title: "Family",
-            subtitle: "Love those girls!",
-            item_url: "https://www.facebook.com/matthewericfisher/",               
-            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/family.png",
-            buttons: [
+          }, 
+          { 
+            "title": "Custom Examples",
+            "subtitle": "A few small apps to give an idea of the possibilites",
+            "item_url": "https://dynamic-memory.com",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/danger-man-at-work-hi.png",
+            "buttons": [
             {
-              type: "web_url",
-              url: "https://facebook.com/matthewericfisher/",
-              title: "See our pics!"
-            }, 
-            {
-              type: "postback",
-              title: "Learn more",
-              payload: "Learn more",
+              "type": "postback",
+              "title": "Tell me a joke 😜",
+              "payload": "joke"
             },
             {
-              type: "postback",
-              title: "Love it in Florida",
-              payload: "Love it in Florida",
+              "type": "postback",
+              "title": "Random Image",
+              "payload": "image"
+            },
+            {
+              "type": "postback",
+              "title": "Who am I?",
+              "payload": "who"
             }
-           ]
-          }, {
-            title: "Passions",
-            subtitle: "Chess,dogs,music",
-            item_url: "https://www.chess.com/members/view/matthewericfisher",
-            image_url: "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/chess.png",
-            buttons: [
+            ]
+          },
+          { 
+            "title": "Bot Examples",
+            "subtitle": "Some great bots",
+            "item_url": "https://developers.facebook.com/products/messenger/",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/example.jpeg",
+            "buttons": [
             {
-              type: "postback",
-              title: "Chess",
-              payload: "Chess",
+              "type": "web_url",
+              "url": "https://www.messenger.com/t/HealthTap",
+              "title": "Health Tap"
             },
             {
-              type: "postback",
-              title: "Music",
-              payload: "Music",
+              "type": "web_url",
+              "url": "http://www.messenger.com/t/EstherBot",
+              "title": "Esther's cool bot"
             },
             {
-              type: "postback",
-              title: "Pets",
-              payload: "Pets",
-            }]
-          }]
+              "type": "web_url",
+              "url": "http://www.messenger.com/t/techcrunch",
+              "title": "TechCrunch news bot"
+            }
+            ]
+          }
+          ]
         }
       }
     }
