@@ -10,6 +10,11 @@
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/linkedin.png"
           }, 
           {
+            "title": "Medium",
+            "item_url": "https://medium.com/@matthewericfisher",
+            "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/medium.png"
+          }, 
+          {
             "title": "StackOverflow",
             "item_url": "http://stackoverflow.com/users/6577680/matthew-fisher",
             "image_url": "https://raw.githubusercontent.com/matthewericfisher/fb-robot/master/img/so-logo.png"
