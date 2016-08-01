@@ -33,8 +33,9 @@ See the LICENSE file in the root directory of this source tree. Feel free to use
 7. Pick a name for your app and remember it
 8. In the Facebook console, get the App Secret from the main Settings page.  Add it to the Heroku setup window
 9. In the Facebook console, generate the Page Access Token from the Messenger -> Settings tab. Add it to the Heroku setup  window
-10. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.herokuapp.com/webhook.  'your-bot-name' is replaced with the Heroku name that you choose.  Select a Validation Token on the Facebook side and add it to the Heroku screen. 
-8. 'Deploy for Free' in Heroku
+10. Pick a password as your Validation Token.
+11. 'Deploy for Free' in Heroku
+12. In the Facebook console, hit +Add Product and pick Webhooks.  The URL will be https://your-bot-name.herokuapp.com/webhook.  'your-bot-name' will be replaced with the Heroku app name that you chose.  Add your Validation Token in the proper field.    Subscribe to  all the message types for delivery.
 
 Thats it. If everything is good, you can open your Page in Messenger and the bot will respond to the 'home' prompt.  The bot will only respond to the Page adminstrator and other people under the 'Roles' page in Facebook.  
 
@@ -53,6 +54,10 @@ You can make new files in the script directory through Github.  Once you have yo
 You have to upload images to the Github project before you can use them,  https://help.github.com/articles/adding-a-file-to-a-repository/
 
 Once the image is uploaded then you can refer to the image in your json files. There are several examples in the project.  The URL has to be exact so be careful on the typing.  You can paste the URL into your browser to see if it is correct. The image should appear if all is well.
+
+## Re-Deploy on Heroku
+
+Once your changes are made and committed on Github, you will need to restart the bot on Heroku.  Go to the 'Deploy' tab in the app dashboard.  Associate the app to your Github project with the Github button, you only need to do this once.  Down at the bottom of the page, hit the 'Deploy' button to restart.  You can 'Enable Automatic Deployment' but hitting the button manually seems a bit quicker for me.  
 
 ## Check your bot's logs on heroku (Thanks to Esther Crawford for this bit)
 
@@ -111,7 +116,7 @@ If there's a bug in your code, checking the heroku logs is the best way to figur
 
     Did you notice the `SyntaxError` part? It looks like there's a problem in my script.json. If I inspect that file in github I'll see that indeed, I have a stray comma at the end if the second to last line.
 
-    ![image](/img/script-error.png)
+    
 
     After I remove that comma and redeploy, everything will return to normal.
 
