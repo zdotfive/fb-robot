@@ -657,8 +657,8 @@ function sendRandomImage(recipientId) {
 
 
     var req = http.get(options,function(res) {
-      console.log('STATUS: ' + res.statusCode);
-      console.log('HEADERS: ' + JSON.stringify(res.headers));
+      //console.log('STATUS: ' + res.statusCode);
+      //console.log('HEADERS: ' + JSON.stringify(res.headers));
 
       // Buffer the body entirely for processing as a whole.
       var bodyChunks = [];
@@ -671,18 +671,18 @@ function sendRandomImage(recipientId) {
         var bodyString = body.toString('utf8');
 
         var index = bodyString.indexOf('src="http://gallery.photo.net/photo/');
-        console.log(bodyString);
+        //console.log(bodyString);
         if(index > -1)
         {
            var startIndex = index+5;
-        console.log(startIndex);
+           //console.log(startIndex);
            // look for the following quote that closes the src= tag
 
            var endIndex =   startIndex + bodyString.substring(startIndex).indexOf('"');
            if(endIndex > startIndex)
            {
                var url =  bodyString.substring(startIndex,endIndex);
-               console.log(url);
+               //console.log(url);
                sendImageMessage(recipientId,url);
            }
         }
