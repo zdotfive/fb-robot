@@ -7,7 +7,7 @@
           "buttons":[
           {
             "type": "postback",
-            "title": "Customize this robot",
+            "title": "Customize this bot",
             "payload": "custom"
           },
           {
