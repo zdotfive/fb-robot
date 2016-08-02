@@ -1136,7 +1136,7 @@ function sendKeywordList(recipientId)
   for (var p in keys) {
      if (keys.hasOwnProperty(p))
      {
-        console.log(p);
+        console.log(keys[p]);
   //      sendTextMessage(recipientId,p);
      }
   } 
