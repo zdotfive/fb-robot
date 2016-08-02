@@ -542,6 +542,9 @@ function sendCustomMessage(recipientId,messageText) {
       case 'who':
         sendLocale(recipientId);
         break        
+      
+      case 'list':
+        sendKeywordList(recipientId);
 
       default:
          sendJsonMessage(recipientId,messageText);
@@ -1124,6 +1127,12 @@ function removePersistentMenu(){
     }
 })
 }
+
+function sendKeywordList(recipientId)
+{
+  sendTextMessage(recipeintId,Object.keys(scriptRules));
+}
+
 
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
