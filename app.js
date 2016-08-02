@@ -545,6 +545,7 @@ function sendCustomMessage(recipientId,messageText) {
       
       case 'list keywords':
         sendKeywordList(recipientId);
+        break        
 
       default:
          sendJsonMessage(recipientId,messageText);
@@ -1137,7 +1138,7 @@ function sendKeywordList(recipientId)
      if (keys.hasOwnProperty(p))
      {
         console.log(keys[p]);
-  //      sendTextMessage(recipientId,p);
+        sendTextMessage(recipientId,keys[p]);
      }
   } 
   return;
