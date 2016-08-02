@@ -1132,8 +1132,11 @@ function sendKeywordList(recipientId)
 {
   var keys = Object.keys(scriptRules);
   for (var p in keys) {
-      console.log(scriptRules[p]);
-      sendTextMessage(recipientId,scriptRules[p]);
+     if (keys.hasOwnProperty(p))
+     {
+        console.log(p);
+        sendTextMessage(recipientId,p);
+     }
   } 
   return;
 }
