@@ -543,7 +543,7 @@ function sendCustomMessage(recipientId,messageText) {
         sendLocale(recipientId);
         break        
       
-      case 'list':
+      case 'list keywords':
         sendKeywordList(recipientId);
 
       default:

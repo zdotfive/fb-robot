@@ -15,7 +15,7 @@
           }, {
             "type": "postback",
             "title": "List keywords",
-            "payload": "list keyword"
+            "payload": "list keywords"
           }]
         }
       }
