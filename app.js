@@ -1131,10 +1131,10 @@ function removePersistentMenu(){
 function sendKeywordList(recipientId)
 {
   var keys = Object.keys(scriptRules);
-  var key_string = keys.toString();
-  console.log(key_string);
-
-  sendTextMessage(recipientId,key_string);
+  for (var p in keys) {
+      sendTextMessage(recipientId,p);
+  } 
+  return result;
 }
 
 
