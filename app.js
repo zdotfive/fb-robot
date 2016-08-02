@@ -1130,7 +1130,7 @@ function removePersistentMenu(){
 
 function sendKeywordList(recipientId)
 {
-  sendTextMessage(recipeintId,Object.keys(scriptRules));
+  sendTextMessage(recipientId,Object.keys(scriptRules));
 }
 
 
