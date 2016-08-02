@@ -1132,9 +1132,10 @@ function sendKeywordList(recipientId)
 {
   var keys = Object.keys(scriptRules);
   for (var p in keys) {
+      console.log(p);
       sendTextMessage(recipientId,p);
   } 
-  return result;
+  return;
 }
 
 
