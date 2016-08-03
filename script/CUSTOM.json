@@ -7,7 +7,7 @@
           "buttons":[{
             "type": "postback",
             "title": "Add new keyword",
-            "payload": "new keyword"
+            "payload": "add keyword"
           }, {
             "type": "postback",
             "title": "Remove keyword",
