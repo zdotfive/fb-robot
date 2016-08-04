@@ -1196,7 +1196,7 @@ function addKeywordText(recipientId)
 
 function addKeywordTextStep2(recipientId,messageText)
 {
-   if( senderContext[recipientId].state === "addKeywordStep2")
+   if( senderContext[recipientId].state === "addKeywordText")
    {
       var filename = "script"+senderContext[recipientId].keyword;
       filename = filename.toUpperCase();
