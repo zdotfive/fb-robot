@@ -1147,7 +1147,7 @@ var customRules = {};
 function addKeywordStep1(recipientId)
 {
    sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces.  For example, home, i want one and 407 are all valid.  Please type in the keyword:");
-   senderConext.recipientId.state = "addKeywordStep1";
+   senderContext.recipientId.state = "addKeywordStep1";
 }
 
 function addKeywordStep2(recipientId, messageText)
