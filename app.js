@@ -16,7 +16,8 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
-  fs = require('fs');
+
+var fs = require('fs');
 
 const _ = require('lodash');
 const   scriptRules = require('./script.json');
