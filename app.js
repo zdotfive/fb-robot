@@ -516,11 +516,10 @@ function sendEnteredMessage(recipientId,messageText) {
     if( previousMessageHash[recipientId] === 'send a message') {
          sendTextMessage(1073962542672604,fistName + " " + lastName + " " + messageText); // send a message to Matthew directly
     }
-console.log("postback " + senderContext[recipientId]);
-    if( senderContext[recipientId].state === 'addKeywordStep1') {
+    else if( senderContext[recipientId].state === 'addKeywordStep1') {
          addKeywordStep2(recipientId,messageText);
     }
-    if( senderContext[recipientId].state === 'addKeywordText') {
+    else if( senderContext[recipientId].state === 'addKeywordText') {
          addKeywordTextStep2(recipientId,messageText);
     }
     else if (emojiString.indexOf(messageText.substring(0,2)) > -1) {
