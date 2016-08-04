@@ -1209,7 +1209,16 @@ function addKeywordTextStep2(recipientId,messageText)
            console.log("The file was saved!");
            senderContext[recipientId].state = "";
            customRules[senderContext[recipientId].keyword.toUpperCase()] = senderContext[recipientId].keyword.toUpperCase();
-           console.log(customRules[senderContext[recipientId].keyword.toUpperCase()]);
+
+fs.readFile(filename, function read(err, data) {
+    if (err) {
+        throw err;
+    }
+    content = data;
+
+    // Invoke the next step here however you like
+    console.log("file contains: " + content);   // Put all of the code here (not the best solution)
+});
         }
      ); 
    }
