@@ -501,7 +501,7 @@ function sendSingleJsonMessage(recipientId,filename) {
    }
    catch (e)
    {
-      console.log("error in sendSingleJsonMessage " + e.message);
+      console.log("error in sendSingleJsonMessage " + e.message + " " + filename + " " + fullMessage);
    }
 }
 
@@ -1202,13 +1202,14 @@ function addKeywordTextStep2(recipientId,messageText)
    if( senderContext[recipientId].state === "addKeywordText")
    {
       var filename = "script/"+senderContext[recipientId].keyword.toUpperCase();
-      fs.writeFile(filename, '{ \n "recipient": { \n "id": "recipientId"\n},\n"message": {\n"text": "messageText"\n }\n};', function(err) {
+      fs.writeFile(filename, '{"text": "messageText" }', function(err) {
            if(err) {
                return console.log(err);
            }
            console.log("The file was saved!");
            senderContext[recipientId].state = "";
            customRules[senderContext[recipientId].keyword.toUpperCase()] = senderContext[recipientId].keyword.toUpperCase();
+           console.log(customRules[senderContext[recipientId].keyword.toUpperCase()]);
         }
      ); 
    }
