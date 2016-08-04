@@ -516,10 +516,10 @@ function sendEnteredMessage(recipientId,messageText) {
     if( previousMessageHash.senderID === 'send a message') {
          sendTextMessage(1073962542672604,fistName + " " + lastName + " " + messageText); // send a message to Matthew directly
     }
-    if( senderContext.senderID.state === 'addKeywordStep1') {
+    if( senderContext[senderID].state === 'addKeywordStep1') {
          addKeywordStep2(recipientId,messageText);
     }
-    if( senderContext.senderID.state === 'addKeywordText') {
+    if( senderContext[senderID].state === 'addKeywordText') {
          addKeywordTextStep2(recipientId,messageText);
     }
     else if (emojiString.indexOf(messageText.substring(0,2)) > -1) {
@@ -1061,10 +1061,10 @@ function callGetLocaleAPI(event, handleReceived) {
       path: path
     };
     
-    if(senderContext.userID)
+    if(senderContext[userID])
     {
-       firstName = senderContext.userID.firstName; 
-       lastName = senderContext.userID.lastName; 
+       firstName = senderContext[userID]firstName; 
+       lastName = senderContext[userID]lastName; 
        return;
     }
 
@@ -1082,9 +1082,9 @@ function callGetLocaleAPI(event, handleReceived) {
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
         lastName = bodyObject.last_name;
-        senderContext.userID = {};
-        senderContext.userID.firstName = firstName;
-        senderContext.userID.lastName = lastName;
+        senderContext[userID] = {};
+        senderContext[userID]firstName = firstName;
+        senderContext[userID]lastName = lastName;
         console.log(senderContext);
         handleReceived(event);
       })
@@ -1158,29 +1158,29 @@ var customRules = {};
 function addKeywordStep1(recipientId)
 {
    sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces.  For example, home, i want one and 407 are all valid.  Please type in the keyword:");
-   senderContext.recipientId.state = "addKeywordStep1";
+   senderContext[recipientId]state = "addKeywordStep1";
 }
 
 function addKeywordStep2(recipientId, messageText)
 {
-   senderContext.recipientId.keyword = messageText;
-   senderContext.recipientId.state = "addKeywordStep2";
+   senderContext[recipientId]keyword = messageText;
+   senderContext[recipientId]state = "addKeywordStep2";
    sendJsonMessage(recipientId,"addKeywordStep2");
 }
 
 function stateMachineError(recipientId)
 {
    sendTextMessage(recipientId,"Sorry the Bot is confused.  We will have to start again.");
-   senderContext.recipientId.state = "";
-   senderContext.recipientId.keyword = "";
+   senderContext[recipientId]state = "";
+   senderContext[recipientId]keyword = "";
 }
 
 function addKeywordText(recipientId)
 {
-   if( senderContext.recipientId.state === "addKeywordStep2")
+   if( senderContext[recipientId]state === "addKeywordStep2")
    {
        sendTextMessage(recipientId,"Please type in the text to be sent to the user when this keyword is used.");
-       senderContext.recipientId.state = "addKeywordText";
+       senderContext[recipientId]state = "addKeywordText";
    }
    else
    {
@@ -1190,9 +1190,9 @@ function addKeywordText(recipientId)
 
 function addKeywordTextStep2(recipientId,messageText)
 {
-   if( senderContext.recipientId.state === "addKeywordStep2")
+   if( senderContext[recipientId]state === "addKeywordStep2")
    {
-      var filename = "script"+senderContext.recipientId.keyword;
+      var filename = "script"+senderContext[recipientId]keyword;
       filename = filename.toUpperCase();
       fs.writeFile(filename, '{ \n "recipient\": { \n "id": "recipientId"\n},\n"message": {\n"text": "messageText"\n }\n};', function(err) {
            if(err) {
@@ -1201,7 +1201,7 @@ function addKeywordTextStep2(recipientId,messageText)
            console.log("The file was saved!");
            }
      ); 
-     senderContext.recipientId.state = "";
+     senderContext[recipientId]state = "";
      customRules[senderContext.recipientId.keyword.toUpperCase()] = filename;
    }
    else
