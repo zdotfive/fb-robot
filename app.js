@@ -1214,10 +1214,9 @@ fs.readFile(filename, function read(err, data) {
     if (err) {
         throw err;
     }
-    content = data;
 
     // Invoke the next step here however you like
-    console.log("file contains: " + content);   // Put all of the code here (not the best solution)
+    console.log("file contains: " + data);   // Put all of the code here (not the best solution)
 });
         }
      ); 
