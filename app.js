@@ -1210,14 +1210,18 @@ function addKeywordTextStep2(recipientId,messageText)
            senderContext[recipientId].state = "";
            customRules[senderContext[recipientId].keyword.toUpperCase()] = senderContext[recipientId].keyword.toUpperCase();
 
+/*
 fs.readFile(filename, function read(err, data) {
     if (err) {
         throw err;
     }
 
     // Invoke the next step here however you like
-    console.log("file contains: " + data);   // Put all of the code here (not the best solution)
+    console.log("file contains: " + data);  
 });
+*/
+           var data = require(filename);
+    console.log("file contains: " + data);   
         }
      ); 
    }
