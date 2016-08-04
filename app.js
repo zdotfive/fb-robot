@@ -1152,23 +1152,24 @@ function addKeywordStep1(recipientId)
 
 function addKeywordStep2(recipientId, messageText)
 {
-   senderConext.recipientId.keyword = messageText;
-   senderConext.recipientId.state = "addKeywordStep2";
+   senderContext.recipientId.keyword = messageText;
+   senderContext.recipientId.state = "addKeywordStep2";
    sendJsonMessage(recipientId,"addKeywordStep2");
 }
 
 function stateMachineError(recipientId)
 {
-   sendTextMessage(recipientId,"Sorry the Bot is confused about the new keyword.  We will have to start again.");
-   senderConext.recipientId.state = "";
+   sendTextMessage(recipientId,"Sorry the Bot is confused.  We will have to start again.");
+   senderContext.recipientId.state = "";
+   senderContext.recipientId.keyword = "";
 }
 
 function addKeywordText(recipientId)
 {
-   if( senderConext.recipientId.state === "addKeywordStep2")
+   if( senderContext.recipientId.state === "addKeywordStep2")
    {
        sendTextMessage(recipientId,"Please type in the text to be sent to the user when this keyword is used.");
-       senderConext.recipientId.state = "addKeywordText";
+       senderContext.recipientId.state = "addKeywordText";
    }
    else
    {
@@ -1178,9 +1179,9 @@ function addKeywordText(recipientId)
 
 function addKeywordTextStep2(recipientId,messageText)
 {
-   if( senderConext.recipientId.state === "addKeywordStep2")
+   if( senderContext.recipientId.state === "addKeywordStep2")
    {
-      var filename = "script"+senderConext.recipientId.keyword;
+      var filename = "script"+senderContext.recipientId.keyword;
       filename = filename.toUpperCase();
       fs.writeFile(filename, '{ \n "recipient\": { \n "id": "recipientId"\n},\n"message": {\n"text": "messageText"\n }\n};', function(err) {
            if(err) {
@@ -1189,8 +1190,8 @@ function addKeywordTextStep2(recipientId,messageText)
            console.log("The file was saved!");
            }
      ); 
-     senderConext.recipientId.state = "";
-     customRules[senderConext.recipientId.keyword.toUpperCase()] = filename;
+     senderContext.recipientId.state = "";
+     customRules[senderContext.recipientId.keyword.toUpperCase()] = filename;
    }
    else
    {
