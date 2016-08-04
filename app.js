@@ -1220,8 +1220,6 @@ fs.readFile(filename, function read(err, data) {
     console.log("file contains: " + data);  
 });
 */
-           var data = require(filename);
-    console.log("file contains: " + data);   
         }
      ); 
    }
