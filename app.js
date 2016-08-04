@@ -1201,8 +1201,8 @@ function addKeywordTextStep2(recipientId,messageText)
 {
    if( senderContext[recipientId].state === "addKeywordText")
    {
-      var filename = "script/"+senderContext[recipientId].keyword.toUpperCase();
-      fs.writeFile(filename, '{"text": "messageText" }', function(err) {
+      var filename = senderContext[recipientId].keyword.toUpperCase()+ ".json";
+      fs.writeFile("script/"+filename, '{"text": \"messageText\" }', function(err) {
            if(err) {
                return console.log(err);
            }
