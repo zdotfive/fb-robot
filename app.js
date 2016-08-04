@@ -1082,9 +1082,9 @@ function callGetLocaleAPI(event, handleReceived) {
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
         lastName = bodyObject.last_name;
-        senderConext.userID = {};
-        senderConext.userID.firstName = firstName;
-        senderConext.userID.lastName = lastName;
+        senderContext.userID = {};
+        senderContext.userID.firstName = firstName;
+        senderContext.userID.lastName = lastName;
         handleReceived(event);
       })
     });
