@@ -1060,6 +1060,13 @@ function callGetLocaleAPI(event, handleReceived) {
       host: 'graph.facebook.com',
       path: path
     };
+    
+    if(senderContext.userID)
+    {
+       firstName = senderContext.userID.firstName; 
+       lastName = senderContext.userID.lastName; 
+       return;
+    }
 
     var req = http.get(options, function(res) {
       //console.log('STATUS: ' + res.statusCode);
@@ -1075,6 +1082,9 @@ function callGetLocaleAPI(event, handleReceived) {
         var bodyObject = JSON.parse(body);
         firstName = bodyObject.first_name;
         lastName = bodyObject.last_name;
+        senderConext.userID = {};
+        senderConext.userID.firstName = firstName;
+        senderConext.userID.lastName = lastName;
         handleReceived(event);
       })
     });
