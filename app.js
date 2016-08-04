@@ -491,9 +491,8 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendSingleJsonMessage(recipientId,keyword) {
+function sendSingleJsonMessage(recipientId,filename) {
    try {
-      var filename = scriptRules[keyword.toUpperCase()];
       filename = "./script/" + filename;
       var json  = require(filename);
       var fullMessage = { recipient: { id: recipientId  }};
@@ -571,12 +570,14 @@ console.log(messageText);
 }
 
 function sendJsonMessage(recipientId,keyword) {
-//  console.log("sendJsonMessage " + keyword);
   if (_.has(scriptRules, keyword.toUpperCase())) {
-      sendSingleJsonMessage(recipientId,keyword);
+      sendSingleJsonMessage(recipientId,scriptRules[keyword.toUpperCase()]);
+  }
+  else if (_.has(customRules, keyword.toUpperCase())) {
+      sendSingleJsonMessage(recipientId,customRules[keyword.toUpperCase()]);
   }
   else  {
-      sendSingleJsonMessage(recipientId,"home");
+      sendSingleJsonMessage(recipientId,"HOME.json");
   }
 }
 
