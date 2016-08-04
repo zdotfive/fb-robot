@@ -16,6 +16,7 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
+  fs = require('fs');
 
 const _ = require('lodash');
 const   scriptRules = require('./script.json');
@@ -23,6 +24,7 @@ const   jokes = require('./script/JOKES.json');
 
 
 var previousMessageHash = {};
+var senderContext = {};
 
 
 var app = express();
@@ -513,9 +515,11 @@ function sendEnteredMessage(recipientId,messageText) {
     if( previousMessageHash.senderID === 'send a message') {
          sendTextMessage(1073962542672604,fistName + " " + lastName + " " + messageText); // send a message to Matthew directly
     }
-    if( previousMessageHash.senderID === 'add keyword') {
-console.log("adding a keyword: " + messageText);
+    if( senderContext.senderID.state === 'addKeywordStep1') {
          addKeywordStep2(recipientId,messageText);
+    }
+    if( senderContext.senderID.state === 'addKeywordText') {
+         addKeywordTextStep2(recipientId,messageText);
     }
     else if (emojiString.indexOf(messageText.substring(0,2)) > -1) {
 console.log("emoji test: " + messageText);
@@ -553,6 +557,9 @@ function sendCustomMessage(recipientId,messageText) {
         sendKeywordList(recipientId);
         break        
 
+      case 'ADDKEYWORD_TEXT':
+        addKeywordText(recipientId);
+        break
       default:
          sendJsonMessage(recipientId,messageText);
 
@@ -1138,12 +1145,55 @@ function removePersistentMenu(){
 var customRules = {};
 function addKeywordStep1(recipientId)
 {
-   sendTextMessage(recipientId,"The keyword can contain letters, numbers and spaces.  For example, HOME, I WANT ONE and 407 are all valid.  Please type in the keyword:");
+   sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces.  For example, home, i want one and 407 are all valid.  Please type in the keyword:");
 }
 
 function addKeywordStep2(recipientId, messageText)
 {
+   senderConext.recipientId.keyword = messageText;
+   senderConext.recipientId.state = "addKeywordStep2";
    sendJsonMessage(recipientId,"addKeywordStep2");
+}
+
+function stateMachineError(recipientId)
+{
+   sendTextMessage(recipientId,"Sorry the Bot is confused about the new keyword.  We will have to start again.");
+   senderConext.recipientId.state = "";
+}
+
+function addKeywordText(recipientId)
+{
+   if( senderConext.recipientId.state === "addKeywordStep2")
+   {
+       sendTextMessage(recipientId,"Please type in the text to be sent to the user when this keyword is used.");
+       senderConext.recipientId.state = "addKeywordText";
+   }
+   else
+   {
+       stateMachineError(recipientId);
+   }
+}
+
+function addKeywordTextStep2(recipientId,messageText)
+{
+   if( senderConext.recipientId.state === "addKeywordStep2")
+   {
+      var filename = "script"+senderConext.recipientId.keyword;
+      filename = filename.toUpperCase();
+      fs.writeFile(filename, '{ \n "recipient\": { \n "id": "recipientId"\n},\n"message": {\n"text": "messageText"\n }\n};', function(err) {
+           if(err) {
+               return console.log(err);
+           }
+           console.log("The file was saved!");
+           }
+     ); 
+     senderConext.recipientId.state = "";
+     customRules[senderConext.recipientId.keyword.toUpperCase()] = filename;
+   }
+   else
+   {
+       stateMachineError(recipientId);
+   }
 }
 
 function sendKeywordList(recipientId)
