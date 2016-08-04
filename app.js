@@ -1199,7 +1199,7 @@ function addKeywordTextStep2(recipientId,messageText)
 {
    if( senderContext[recipientId].state === "addKeywordText")
    {
-      var filename = "script"+senderContext[recipientId].keyword;
+      var filename = "script/"+senderContext[recipientId].keyword;
       filename = filename.toUpperCase();
       fs.writeFile(filename, '{ \n "recipient\": { \n "id": "recipientId"\n},\n"message": {\n"text": "messageText"\n }\n};', function(err) {
            if(err) {
@@ -1209,7 +1209,7 @@ function addKeywordTextStep2(recipientId,messageText)
            }
      ); 
      senderContext[recipientId].state = "";
-     customRules[senderContext[recipientId].keyword.toUpperCase()] = filename;
+     customRules[senderContext[recipientId].keyword.toUpperCase()] = senderContext[recipientId].keyword.toUpperCase();
    }
    else
    {
