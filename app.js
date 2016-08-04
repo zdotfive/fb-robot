@@ -560,6 +560,7 @@ function sendCustomMessage(recipientId,messageText) {
       case 'ADDKEYWORD_TEXT':
         addKeywordText(recipientId);
         break
+
       default:
          sendJsonMessage(recipientId,messageText);
 
@@ -1178,6 +1179,8 @@ function stateMachineError(recipientId)
 
 function addKeywordText(recipientId)
 {
+   console.log("addKeywordText " + JSON.stringify(senderContext));
+
    if( senderContext[recipientId].state === "addKeywordStep2")
    {
        sendTextMessage(recipientId,"Please type in the text to be sent to the user when this keyword is used.");
