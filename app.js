@@ -535,6 +535,8 @@ function sendEnteredMessage(recipientId,messageText) {
 
 function sendCustomMessage(recipientId,messageText) {
 
+console.log(messageText);
+
     switch (messageText.toLowerCase()) {
 
       case 'joke':
@@ -557,7 +559,7 @@ function sendCustomMessage(recipientId,messageText) {
         sendKeywordList(recipientId);
         break        
 
-      case 'ADDKEYWORD_TEXT':
+      case 'addkeyword_text':
         addKeywordText(recipientId);
         break
 
