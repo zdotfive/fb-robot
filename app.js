@@ -1267,7 +1267,6 @@ function addKeywordButtonStep2(recipientId, messageText)
    }
 }
 
-function stateMachineError(recipientId)
 function sendKeywordList(recipientId)
 {
   if(customRules.length == 0)
