@@ -522,6 +522,9 @@ console.log("sendEnteredMessage "+ messageText);
     else if( senderContext[recipientId].state === 'addKeywordText') {
          addKeywordTextStep2(recipientId,messageText);
     }
+    else if( senderContext[recipientId].state === 'addKeywordButton') {
+         addKeywordButtonStep2(recipientId,messageText);
+    }
     else if (emojiString.indexOf(messageText.substring(0,2)) > -1) {
          var maxLength = emojiString.length;
          var random = Math.floor(Math.random() * maxLength);
@@ -561,6 +564,10 @@ console.log("sendCustoMessage "+ messageText);
 
       case 'addkeyword_text':
         addKeywordText(recipientId);
+        break
+
+      case 'addkeyword_button':
+        addKeywordButton(recipientId);
         break
 
       default:
@@ -1232,6 +1239,35 @@ fs.readFile(filename, function read(err, data) {
    }
 }
 
+function addKeywordButton(recipientId)
+{
+   console.log("addKeywordButton " + JSON.stringify(senderContext));
+
+   if( senderContext[recipientId].state === "addKeywordStep2")
+   {
+       sendTextMessage(recipientId,"Please type in the title for the button.");
+       senderContext[recipientId].state = "addKeywordButton";
+   }
+   else
+   {
+       stateMachineError(recipientId);
+   }
+}
+
+function addKeywordButtonStep2(recipientId, messageText)
+{
+   if( senderContext[recipientId].state === "addKeywordButton")
+   {
+       senderContext[recipientId].state = "addKeywordButtonStep2";
+       sendSingleJsonMessage(recipientId,"ADDKEYWORD_BUTTONSTEP2.json");
+   }
+   else
+   {
+       stateMachineError(recipientId);
+   }
+}
+
+function stateMachineError(recipientId)
 function sendKeywordList(recipientId)
 {
   if(customRules.length == 0)
