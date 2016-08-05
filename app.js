@@ -1211,6 +1211,7 @@ function addKeywordTextStep2(recipientId,messageText)
            console.log("The file was saved!");
            senderContext[recipientId].state = "";
            customRules[senderContext[recipientId].keyword.toUpperCase()] = senderContext[recipientId].keyword.toUpperCase();
+           sendTextMessage(recipientId,"The keyword has been added.  Please type in the keyword to see the response.");
 
 /*
 fs.readFile(filename, function read(err, data) {
