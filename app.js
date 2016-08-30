@@ -80,12 +80,6 @@ app.get('/webhook', function(req, res) {
  *
  */
 app.post('/webhook', function (req, res) {
-  if(isStopped == true)
-  {
-    res.sendStatus(200);
-    return;
-  }
-  var data = req.body;
 
   // Make sure this is a page subscription
   if (data.object == 'page') {
@@ -160,6 +154,11 @@ function verifyRequestSignature(req, res, buf) {
  *
  */
 function receivedAuthentication(event) {
+  if(isStopped == true)
+  {
+    return;
+  }
+  var data = req.body;
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfAuth = event.timestamp;
@@ -234,6 +233,9 @@ function handleReceivedMessage(event) {
   }
 
   if (messageText) {
+    if((isStopped == true) && (messageText !== "start")){
+      return;
+    }
   console.log("Received message for user %d and page %d at %d with message: %s", 
     senderID, recipientID, timeOfMessage,messageText);
 
@@ -335,6 +337,10 @@ function handleReceivedMessage(event) {
  */
 
 function receivedDeliveryConfirmation(event) {
+  if(isStopped == true)
+  {
+    return;
+  }
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var delivery = event.delivery;
@@ -362,6 +368,10 @@ function receivedDeliveryConfirmation(event) {
  */
 
 function receivedPostback(event) {
+  if(isStopped == true)
+  {
+    return;
+  }
   callGetLocaleAPI(event, handleReceivedPostback);
 }
 
@@ -390,6 +400,10 @@ function handleReceivedPostback(event) {
  * 
  */
 function receivedMessageRead(event) {
+  if(isStopped == true)
+  {
+    return;
+  }
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
 
