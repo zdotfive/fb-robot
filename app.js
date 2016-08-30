@@ -298,6 +298,18 @@ function handleReceivedMessage(event) {
         removePersistentMenu();
         break        
 
+      case 'stop':  // Stop the Bot from responding if the admin sends this messages
+         if(senderID ==  1073962542672604) {
+            isStopped = true;
+            break
+         }
+
+      case 'start': // start up again
+         if(senderID ==  1073962542672604) {
+            isStopped = false;
+            break
+         }
+
       default:
          sendEnteredMessage(senderID, messageText);
 
@@ -585,17 +597,6 @@ console.log("sendCustoMessage "+ messageText);
         addKeywordButtonStep3(recipientId,3);
         break
 
-      case 'stop':  // Stop the Bot from responding if the admin sends this messages
-         if(sendID ==  1073962542672604) {
-            isStopped = true;
-            break
-         }
-
-      case 'start': // start up again
-         if(sendID ==  1073962542672604) {
-            isStopped = false;
-            break
-         }
 
       default:
          sendJsonMessage(recipientId,messageText);
