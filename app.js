@@ -80,6 +80,11 @@ app.get('/webhook', function(req, res) {
  *
  */
 app.post('/webhook', function (req, res) {
+  if(isStopped == true)
+  {
+    res.sendStatus(200);
+    return;
+  }
   var data = req.body;
 
   // Make sure this is a page subscription
@@ -193,7 +198,6 @@ var lastName;
  * 
  */
 function receivedMessage(event) {
-  if(isStopped == false)
       callGetLocaleAPI(event, handleReceivedMessage);
 }
 
