@@ -300,15 +300,17 @@ function handleReceivedMessage(event) {
 
       case 'stop':  // Stop the Bot from responding if the admin sends this messages
          if(senderID ==  1073962542672604) {
+            console.log("Stoppping bot");
             isStopped = true;
-            break
          }
+         break
 
       case 'start': // start up again
-         if(senderID ==  1073962542672604) {
+         if(senderID ==  1073962542672604)  {
+            console.log("Starting bot");
             isStopped = false;
-            break
          }
+         break
 
       default:
          sendEnteredMessage(senderID, messageText);
