@@ -1105,7 +1105,7 @@ function callGetLocaleAPI(event, handleReceived) {
     {
        firstName = senderContext[userID].firstName; 
        lastName = senderContext[userID].lastName; 
-       console.log("found " + JSON.stringify(senderContext));
+       console.log("found " + JSON.stringify(senderContext[userID]));
        handleReceived(event);
        return;
     }
