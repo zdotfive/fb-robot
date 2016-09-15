@@ -3,17 +3,17 @@
       "quick_replies": [
         {
           "content_type":"text",
-          "title":"Text",
+          "title":"One",
           "payload":"ADDKEYWORD_BUTTON1"
         },
         {
           "content_type":"text",
-          "title":"Button",
+          "title":"Two",
 	  "payload":"ADDKEYWORD_BUTTON2"
         },
         {
           "content_type":"text",
-          "title":"Quick Reply",
+          "title":"Three",
 	  "payload":"ADDKEYWORD_BUTTON3"
         }
       ]
