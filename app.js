@@ -1128,9 +1128,9 @@ function callGetLocaleAPI(event, handleReceived) {
        lastName = senderContext[userID].lastName; 
        console.log("found " + JSON.stringify(senderContext[userID]));
        if(!firstName) 
-          firstName = "undefined");
+          firstName = "undefined";
        if(!lastName) 
-          lastName = "undefined");
+          lastName = "undefined";
        handleReceived(event);
        return;
     }
@@ -1150,9 +1150,9 @@ function callGetLocaleAPI(event, handleReceived) {
         firstName = bodyObject.first_name;
         lastName = bodyObject.last_name;
         if(!firstName) 
-          firstName = "undefined");
+          firstName = "undefined";
         if(!lastName) 
-          lastName = "undefined");
+          lastName = "undefined";
         senderContext[userID] = {};
         senderContext[userID].firstName = firstName;
         senderContext[userID].lastName = lastName;
