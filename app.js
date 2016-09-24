@@ -1229,7 +1229,7 @@ function removePersistentMenu(){
 var customRules = {};
 function addKeywordStep1(recipientId)
 {
-   sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces.  For example, home, i want one and 407 are all valid.  Please type in the keyword:");
+   sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces. Please type in the keyword:");
    senderContext[recipientId].state = "addKeywordStep1";
 }
 
@@ -1341,11 +1341,7 @@ function addKeywordButtonStep2(recipientId, buttonCount)
 
 function sendKeywordList(recipientId)
 {
-  if(customRules.length == 0)
-  {
-    sendTextMessage(recipientId,"No custom keywords defined yet");
-  }
-  else
+  if (typeof customRules !== 'undefined' && customRules.length > 0) 
   {
       var keys = Object.keys(customRules);
 
@@ -1357,6 +1353,10 @@ function sendKeywordList(recipientId)
          }
       }
   } 
+  else
+  {
+    sendTextMessage(recipientId,"No custom keywords defined yet");
+  }
   return;
 }
 
