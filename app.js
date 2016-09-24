@@ -1351,14 +1351,6 @@ function sendKeywordList(recipientId)
          if (keys.hasOwnProperty(p))
          {
             sendTextMessage(recipientId,keys[p]);
-  {
-      var keys = Object.keys(customRules);
-
-      for (var p in keys) 
-      {
-         if (keys.hasOwnProperty(p))
-         {
-            sendTextMessage(recipientId,keys[p]);
          }
       }
   } 
