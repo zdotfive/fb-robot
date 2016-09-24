@@ -1341,7 +1341,16 @@ function addKeywordButtonStep2(recipientId, buttonCount)
 
 function sendKeywordList(recipientId)
 {
-  if (customRules.length > 0) 
+//  if (customRules.length > 0) 
+  if (1)
+  {
+      var keys = Object.keys(customRules);
+
+      for (var p in keys) 
+      {
+         if (keys.hasOwnProperty(p))
+         {
+            sendTextMessage(recipientId,keys[p]);
   {
       var keys = Object.keys(customRules);
 
