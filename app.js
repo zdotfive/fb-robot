@@ -10,6 +10,7 @@
 /* jshint node: true, devel: true */
 'use strict';
 
+var customRules = {};
 const 
   bodyParser = require('body-parser'),
   crypto = require('crypto'),
@@ -1226,7 +1227,6 @@ function removePersistentMenu(){
 })
 }
 
-var customRules = {};
 function addKeywordStep1(recipientId)
 {
    sendTextMessage(recipientId,"The keyword will drive the actions by the Bot.  The user can type in the keyword or it can be triggered by a link.  The keyword can contain letters, numbers and spaces. Please type in the keyword:");
@@ -1341,7 +1341,7 @@ function addKeywordButtonStep2(recipientId, buttonCount)
 
 function sendKeywordList(recipientId)
 {
-  if (typeof customRules !== 'undefined' && customRules.length > 0) 
+  if (customRules.length > 0) 
   {
       var keys = Object.keys(customRules);
 
