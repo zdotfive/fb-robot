@@ -1002,7 +1002,7 @@ function sendQuickReply(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What's your favorite movie genre?",
+      text: "Some regular buttons and a location test",
       metadata: "DEVELOPER_DEFINED_METADATA",
       quick_replies: [
         {
@@ -1012,13 +1012,13 @@ function sendQuickReply(recipientId) {
         },
         {
           "content_type":"text",
-          "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+          "title":"Something else",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_SOMETHING"
         },
         {
-          "content_type":"text",
-          "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+          "content_type":"location",
+          "title":"Send Location",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_LOCATION"
         }
       ]
     }
