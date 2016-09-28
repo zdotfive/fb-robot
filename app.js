@@ -325,7 +325,8 @@ function handleReceivedMessage(event) {
 
     }
   } else if (messageAttachments) {
-    sendJsonMessage(senderID, messageAttachments[0].payload.url);
+    if(messageAttachements[0].pyload.url)
+        sendJsonMessage(senderID, messageAttachments[0].payload.url);
   }
 }
 
